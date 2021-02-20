@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>Mensaje {{$name}} https://ndgroup.mx/</title>
+<style type="text/css">
+body { -webkit-text-size-adjust: none;-ms-text-size-adjust: none;margin: 0;padding: 0;}
+.title_t { border-top: 1px solid #f2f2f2;color: rgb(153, 153, 153);font-size: 12px;font-weight: 400;padding-top: 10px;text-transform:uppercase; }
+.container-padding{ background:#fff; padding:0px 30px 0px 30px; font:normal 13px/17px tahoma; color:#333; border: 1px solid #f2f2f2; }
+.from{ font:normal 16px/24px tahoma; color:#666; text-transform:uppercase; text-align:center; margin-bottom:20px; }
+.logo{ width: 170px; }
+table {border-spacing: 0;}
+table td {border-collapse: collapse;}
+@media screen and (max-width: 600px) {
+    table[class="container"] {
+    width: 95% !important;
+    }
+}
+@media screen and (max-width: 480px) {
+    td[class="container-padding"] {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    }
+}
+</style>
+</head>
+<body>
+    <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" bgcolor="#fbfbfb">
+        <tr>
+            <td align="center" valign="top" >
+                <table border="0" width="600" cellpadding="0" cellspacing="0" class="container" bgcolor="#fff">
+                    <tr>
+                        <td class="container-padding">
+                           <div align="center">
+                                <img class="logo" src="https://ndgroup.mx/img/logo.jpg" alt="{{$name}} Acaba de contactar desde https://ndgroup.mx/" />
+                            </div>
+                            <div class="from" > {{$name}} Acaba de contactar desde 
+                                <a target="_blank" href="https://ndgroup.mx/">ndgroup.mx </a>
+                            </div>
+                            <p>Datos de la persona.</p>
+                            <h3 class="title_t">Nombre:</h3>
+                            <p> {{$name}}</p>
+                            <h3 class="title_t">Correo:</h3>
+                            <p> {{$email}}</p>
+                            <h3 class="title_t">Numero de Teléfono:</h3>
+                            <p>{{$phone}}</p>
+                            <h3 class="title_t">Mensaje redactado:</h3>
+                            <p>{{$content}}</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+</body>
+</html>
