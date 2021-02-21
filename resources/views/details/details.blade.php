@@ -59,6 +59,7 @@
 									<option value="Solicitar una visita">Solicitar una visita</option>
 								</select>
 							</div>
+							<input type="hidden" name="property_id" value="{{ $data->id }}">
 							<!-- Grid column -->
 							<div class="col-md-12 mb-4">
 								<input type="text" class="custom" placeholder="Nombre" name="name" value="{{ old('name') }}" required autocomplete="off" >
@@ -79,7 +80,6 @@
 								<textarea id="content" class="col-md-12 without custom" name="content" >{{ old('content') }}</textarea>
 							</div>
 						</div>
-						
 						<div class="col-md-12 d-flex justify-content-center">
 							<input type="submit" class="btn btn-info" value="Solicitar Información">
 						</div>

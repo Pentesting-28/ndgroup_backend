@@ -4,47 +4,42 @@ namespace App\Http\Controllers\Mail;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Property;
+use App\Mail\SendMailInformation;
+use Exception;
 use Session;
 use Mail;
 
 class SendMailController extends Controller
 {
 
-  public function sendmail( Request $request)
+  public function sendmail( Request $request )
   {
-    $request->validate([
-      'name'  => 'required',
-      'email' => 'required|email',
-      'phone' => 'required'
-    ]);
-    return response()->json([
-        'data' => 'todo bien '
-    ],200);
-    Mail::send('partials.email',$request->all(), function($header){ 
-      $header->subject('Nueva Consulta desde https://ndgroup.mx/'); //asunto 
-      $header->to('direccion@ndgroup.mx'); //correo destino
-    });
-    Session::flash('email','¡Mensaje enviado correctamente!'); 
-    return back();
+    try {
+      $request->validate([
+        'current' => 'required',
+        'name'    => 'required',
+        'email'   => 'required|email',
+        'phone'   => 'required',
+        'content' => 'required',
+        'property_id' => 'required'
+      ]);
+      $data = Property::when($request->has('property_id'), function ( $query ) use ( $request ) {
+                          $query->whereId( $request->property_id )
+                                ->with('images:id,property_id,main_img')
+                                ->select('id','properti','city','adress')
+                                ->has('images');
+                        })
+                        ->first();
+      if(!$data){throw new Exception('Propiedad no encontrada', 504);}
+      Mail::to('mpenav28@gmail.com')->send(new SendMailInformation($request->all(), $data));
+      Session::flash('email','¡Mensaje enviado correctamente!'); 
+      return back();
+    } catch (Exception $e) {
+        return response()->json([
+          'error' => 'SendMail.sendmail.failed',
+          'message' => $e->getMessage()
+        ], 442);
+    }
   }
-
-  // public function sendmail( Request $res) 
-  // {
-
-  //   $res->validate([
-  //       'name' => 'required',
-  //       'email' => 'required|email',
-  //       'phone' => 'required'
-  //   ]);
-
-  //   Mail::send('partials.email',$res->all(), function($header){ 
-
-  //       $header->subject('Nueva Consulta desde https://ndgroup.mx/'); //asunto 
-  //       //$header->to('direccion@ndgroup.mx'); //correo destino
-  //       $header->to('mpenav28@gmail.com'); //correo destino
-  //   });
-  
-  //   Session::flash('email','¡Mensaje enviado correctamente!'); 
-  //   return back();
-  // }
 }
