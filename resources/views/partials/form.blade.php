@@ -27,7 +27,7 @@
 			<div class="col-md-3 mb-4">
 				<div class="row">
 					<h5 class="widget-title ">CONTACTO</h5>
-					<form action="{{route('sendmail')}}" method="post" class="needs-validation" novalidate >
+					<form action="{{route('sendMailContact')}}" method="POST" class="needs-validation" novalidate >
 						@csrf   {{-- es un metodo de seguridad de laravel, se debe de incluir en todos los formularios --}}
 						<!-- Grid row -->
 						<div class="row form_c form-row">

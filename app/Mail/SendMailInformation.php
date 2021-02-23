@@ -31,6 +31,7 @@ class SendMailInformation extends Mailable
      */
     public function build()
     {
-        return $this->view('partials.informationEmail');
+        return $this->view('partials.informationEmail')
+                    ->subject("Nueva Consulta desde https://ndgroup.mx/");
     }
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Property;
 use App\Mail\SendMailInformation;
+use App\Mail\SendMailContact;
 use Exception;
 use Session;
 use Mail;
@@ -13,7 +14,7 @@ use Mail;
 class SendMailController extends Controller
 {
 
-  public function sendmail( Request $request )
+  public function sendMailInformation( Request $request )
   {
     try {
       $request->validate([
@@ -33,6 +34,26 @@ class SendMailController extends Controller
                         ->first();
       if(!$data){throw new Exception('Propiedad no encontrada', 504);}
       Mail::to('mpenav28@gmail.com')->send(new SendMailInformation($request->all(), $data));
+      Session::flash('email','¡Mensaje enviado correctamente!'); 
+      return back();
+    } catch (Exception $e) {
+        return response()->json([
+          'error' => 'SendMail.sendmail.failed',
+          'message' => $e->getMessage()
+        ], 442);
+    }
+  }
+
+  public function sendMailContact( Request $request )
+  {
+    try {
+      $request->validate([
+        'name'    => 'required',
+        'email'   => 'required|email',
+        'phone'   => 'required',
+        'content' => 'required',
+      ]);
+      Mail::to('mpenav28@gmail.com')->send(new SendMailContact($request->all()));
       Session::flash('email','¡Mensaje enviado correctamente!'); 
       return back();
     } catch (Exception $e) {

@@ -36,7 +36,7 @@ table td {border-collapse: collapse;}
                            <div align="center">
                                 <img class="logo" src="https://ndgroup.mx/img/logo.jpg" alt=" {{ $request['name'] }} Acaba de contactar desde https://ndgroup.mx/" />
                             </div>
-                            <div class="from" > {{ $request['name'] }} Acaba de contactar desde 
+                            <div class="from"> {{ $request['name'] }} Acaba de contactar desde 
                                 <a target="_blank" href="https://ndgroup.mx/">ndgroup.mx </a>
                             </div>
                             <h3>Solicitar más Información</h3><br>
@@ -53,7 +53,7 @@ table td {border-collapse: collapse;}
                             <h3 class="title_t">Actual:</h3>
                             <p> {{ $request['current'] }}</p>
                             <hr>
-                            <img class="logo" src="{{ $message->embed(asset($data->main_img)) }}" alt=" {{ $data->propertis }} Acaba de contactar desde https://ndgroup.mx/" />
+                            <img class="logo" src="https://ndgroup.mx/{{ substr($data->images[0]['main_img'], 42) }}" alt=" {{ $data->propertis }} Acaba de contactar desde https://ndgroup.mx/" />
                             <p>Datos de la propiedad.</p>
                             <h3 class="title_t">#Id:</h3>
                             <p> {{ $data->id }}</p>

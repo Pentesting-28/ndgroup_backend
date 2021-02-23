@@ -10,7 +10,7 @@
 		<li class="breadcrumb-item active" aria-current="page">Detalles <i class="fa fa-building"></i> </li>
 	</ol>
 </nav>
-<div class="row">
+ <div class="row">
 	<div class="text-center col-md-12">
 		<img src="{{ $data->images[0]['main_img'] }}" class="img-fluid" alt="{{ $data->properti }}">
 		<hr>
@@ -43,7 +43,7 @@
 			</div>
 			<hr>
 			<div class="col-md-12 bg-light text-white">
-				<form action="{{ route('sendmail') }}" method="POST" class="form-inline p-4" >
+				<form action="{{ route('sendMailInformation') }}" method="POST" class="form-inline p-4" >
 					<div class="row">
 						@csrf
 						<div class="form-group col-md-4 p-0">

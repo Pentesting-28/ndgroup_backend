@@ -214,18 +214,4 @@ class PropertyController extends Controller
     $title = 'Contacto'; 
     return view('contact', compact('title')); 
   }
-
-  public function sendmail( Request $request){
-    $request->validate([
-      'name'  => 'required',
-      'email' => 'required|email',
-      'phone' => 'required'
-    ]);
-    Mail::send('partials.email',$request->all(), function($header){ 
-      $header->subject('Nueva Consulta desde https://ndgroup.mx/'); //asunto 
-      $header->to('direccion@ndgroup.mx'); //correo destino
-    });
-    Session::flash('email','¡Mensaje enviado correctamente!'); 
-    return back();
-  }
 }

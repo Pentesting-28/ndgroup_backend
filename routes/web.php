@@ -33,8 +33,8 @@ Route::get('/Submit-listing/{id}', 'PropertyController@details')->name('details'
 
 Route::get('/Contacto', 'PropertyController@contact')->name('contact');
 //Envio de correos
-// Route::post('/Sendmail', 'Mail\SendMailController@sendmail')->name('sendmail')
-Route::post('/Sendmail', 'Mail\SendMailController@sendmail')->name('sendmail'); // se pone post ya que en el formulario lo tienes como post, al momento de tenerlo como get es como si fuera una vista y solo envia las variables por la url, post es mas seguro y se recomienda siempre en los formularios
+Route::post('/SendMailContact', 'Mail\SendMailController@sendMailContact')->name('sendMailContact');
+Route::post('/SendMailInformation', 'Mail\SendMailController@sendMailInformation')->name('sendMailInformation'); // se pone post ya que en el formulario lo tienes como post, al momento de tenerlo como get es como si fuera una vista y solo envia las variables por la url, post es mas seguro y se recomienda siempre en los formularios
 
 Auth::routes();
 

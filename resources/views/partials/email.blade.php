@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
-<title>Mensaje {{$name}} https://ndgroup.mx/</title>
+<title>Mensaje {{$request['name']}} https://ndgroup.mx/</title>
 <style type="text/css">
 body { -webkit-text-size-adjust: none;-ms-text-size-adjust: none;margin: 0;padding: 0;}
 .title_t { border-top: 1px solid #f2f2f2;color: rgb(153, 153, 153);font-size: 12px;font-weight: 400;padding-top: 10px;text-transform:uppercase; }
@@ -34,20 +34,20 @@ table td {border-collapse: collapse;}
                     <tr>
                         <td class="container-padding">
                            <div align="center">
-                                <img class="logo" src="https://ndgroup.mx/img/logo.jpg" alt="{{$name}} Acaba de contactar desde https://ndgroup.mx/" />
+                                <img class="logo" src="https://ndgroup.mx/img/logo.jpg" alt="{{$request['name']}} Acaba de contactar desde https://ndgroup.mx/" />
                             </div>
-                            <div class="from" > {{$name}} Acaba de contactar desde 
+                            <div class="from" > {{$request['name']}} Acaba de contactar desde 
                                 <a target="_blank" href="https://ndgroup.mx/">ndgroup.mx </a>
                             </div>
                             <p>Datos de la persona.</p>
                             <h3 class="title_t">Nombre:</h3>
-                            <p> {{$name}}</p>
+                            <p> {{$request['name']}}</p>
                             <h3 class="title_t">Correo:</h3>
-                            <p> {{$email}}</p>
+                            <p> {{$request['email']}}</p>
                             <h3 class="title_t">Numero de Teléfono:</h3>
-                            <p>{{$phone}}</p>
+                            <p>{{$request['phone']}}</p>
                             <h3 class="title_t">Mensaje redactado:</h3>
-                            <p>{{$content}}</p>
+                            <p>{{$request['content']}}</p>
                         </td>
                     </tr>
                 </table>
