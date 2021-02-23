@@ -63,7 +63,7 @@ function initMap() {
           </nav>
         @endauth
         @forelse( $data as $item )
-        <div class="card" >{{ $item->id }}
+        <div class="card" >
           <a href=" {{ route('details', $item->id )}}" class="text-decoration-none" >
             <div class="row no-gutters">
               @foreach($item->images as $images)
