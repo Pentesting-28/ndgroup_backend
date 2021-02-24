@@ -89,7 +89,7 @@ function initMap() {
         </div>
         @empty 
         
-        <div class="card col-md-12">
+        <div class="card p-0 col-md-12">
           <h5 class="card-header text-light bg bg-danger">Atención</h5>
           <div class="card-body">
             <h5 class="card-title text-light bg bg-warning p-4">No existe información</h5>
