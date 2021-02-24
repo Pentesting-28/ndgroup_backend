@@ -12,7 +12,7 @@ div > .timer_v::before { content: "$"; }
 div > .timer_c::after { content: "+"; }
 .txt_inf { font-family:var(--text-font-family); color:var(--main); font-size:22px; font-weight: var(--primary-font-weight);  }
 .txt_adora { font-family: var(--primary-font-family); font-size: 65px; font-weight: 600; line-height:1; }
-.txt_img_bt .lead{ font-family: var(--text-font-family); color: var(--color-text); font-size:15px; line-height: 1.8em; text-align: justify;  }
+.lead{ font-family: var(--text-font-family); color: var(--color-text); font-size:15px; line-height: 1.8em; text-align: justify;  }
 .txt_img_bt .mw-100{ transition-duration:.3s;transition-property:transform; }
 .txt_img_bt .mw-100:hover{ transform:scale(1.1);  }
 .row > .shdn{ opacity:0.8;  }
@@ -91,9 +91,12 @@ div #bsm_map { height:300px; }
 #deleteF{ margin:1rem 0; padding:0px; }
 
 }
+.items_list div.about{ width:1200px;}
+.custom-text::first-letter{font-size: 3em;color: var(--blue);float: left;line-height: 1;font-family: serif;margin:0px;font-weight: bold;}
 
 .without{ resize:none; }
-
+.custom{ border: none; outline: none; color: #444;display: inline-block;width: 100%; padding: 11px 16px; height: 42px; background: #fff; border: 1px solid #d5d9dd; border-radius: 3px;  font-size: 14px; }
+.content textarea{ height:200px; min-height: 60px; }
 div.box{ background: var(--color-btn); box-shadow:0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12); border-top: 1px solid #d5d9dd; border-bottom: 1px solid #d5d9dd; min-height: auto; padding: 10px 0; }
 input.span_8{ border: none; -webkit-transition: all 0.2s linear; font-size: .75em;line-height: 42px;height: 42px;padding: 0 2em 1.1em;text-align: center;text-transform: uppercase;color: #fff;background:var(--main); font-family: var(--lato-font-family); }
 .plus{ text-align: center;background: #ccc;color: #666; width: 30%; margin-left: 2%; }  
@@ -105,7 +108,7 @@ input.span_8{ border: none; -webkit-transition: all 0.2s linear; font-size: .75e
 -------------------------------------------------------------------*/
 #bsm_map { width: 100%;overflow-x: hidden; height: 562px; position: relative; padding: 0; margin-bottom: -25px; padding-bottom: 25px; }
 #bsm_map #bsm_map_content { width: 100%; height: 100%; }
-
+a.text-dark{ text-decoration:none; }
 .🤔{ font-family: var(--lato-font-family); }
 .pagina nav .flex.justify-between { margin-bottom:1rem; }
 a.relative { padding-top: 5px!important; }

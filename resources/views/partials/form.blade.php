@@ -12,14 +12,14 @@
 						<li class="list-group-item mb-0 "><i class="fa fa-building mr-2"></i> Cancún, Quintana Roo 77503
 						México</li>
 						<li class="list-group-item mb-0"><a href="tel:5219982425617"><i class="fa fa-phone  mr-2"></i> 998 242 5617</a></li>
-						<li class="list-group-item mb-0"><a href="mailto:noyacontacto@gmail.com"><i class="fa fa-envelope  mr-2"></i> noyacontacto@gmail.com</a></li>
+						<li class="list-group-item mb-0"><a href="mailto:direccion@ndgroup.mx"><i class="fa fa-envelope  mr-2"></i> direccion@ndgroup.mx</a></li>
 					</ul>
 					<ul class="list-group list-group-flush justify-content-right col-md-6">
 						<li class="list-group-item btn_1" >
 							<a class="btn btn-light" target="_blank" href="https://www.facebook.com/nrealestate38"><i class="fa fa-facebook"></i></a>
-							<a class="btn btn-light" target="_blank" href="#"><i class="fa fa-instagram"></i></a>
+							<a class="btn btn-light" target="_blank" href="https://www.instagram.com/nd.realestatecun/"><i class="fa fa-instagram"></i></a>
 							<a class="btn btn-light" target="_blank" href="https://api.whatsapp.com/send?phone=5219982425617&text=Hola,%20información%20del%20inmueble."><i class="fa fa-whatsapp"></i></a>
-							<a class="btn btn-light" href="mailto:noyacontacto@gmail.com"><i class="fa fa-envelope"></i></a>
+							<a class="btn btn-light" href="mailto:direccion@ndgroup.mx"><i class="fa fa-envelope"></i></a>
 						</li>
 					</ul>
 				</div>
@@ -73,9 +73,9 @@
 					<ul class="list-group list-group-flush col-md-12">
 						<li class="list-group-item row social_m" >
 							<a class="btn btn-light btn_fb" target="_blank" href="https://www.facebook.com/nrealestate38"><i class="fa fa-facebook"></i></a>
-							<a class="btn btn-light btn_insta" target="_blank" href="#"><i class="fa fa-instagram"></i></a>
+							<a class="btn btn-light btn_insta" target="_blank" href="https://www.instagram.com/nd.realestatecun/"><i class="fa fa-instagram"></i></a>
 							<a class="btn btn-light btn_whatsp" target="_blank" href="https://api.whatsapp.com/send?phone=5219982425617&text=Hola,%20información%20del%20inmueble."><i class="fa fa-whatsapp"></i></a>
-							<a class="btn btn-light btn_mail" href="mailto:noyacontacto@gmail.com"><i class="fa fa-envelope"></i></a>
+							<a class="btn btn-light btn_mail" href="mailto:direccion@ndgroup.mx"><i class="fa fa-envelope"></i></a>
 						</li>
 					</ul>
 				</div>

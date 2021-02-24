@@ -10,44 +10,67 @@
 		<li class="breadcrumb-item active" aria-current="page">Detalles <i class="fa fa-building"></i> </li>
 	</ol>
 </nav>
- <div class="row">
+<div class="row">
 	<div class="text-center col-md-12">
 		<img src="{{ $data->images[0]['main_img'] }}" class="img-fluid" alt="{{ $data->properti }}">
 		<hr>
 	</div>
 	<div class="col-md-10">
 		<div class="container">
-			<div class="card">
-				<h3 class="px-4 mt-4 mb-0 " >{{ $data->properti }} | <span class="btn btn-info py-0"><i class="fa fa-check-circle"></i> {{ $data->status }} </span></h3>
-				<h4 class="px-4 my-0" >{{ $data->city }}</h4> 
-				<div class="card-body">
-					<h5 class="card-title"><i class="fa fa-house-damage"></i> {{ $data->city }}</h5>
-					<p class="card-text"><i class="fa fa-hand-holding-usd"></i> 
-						{{ $data->payments[0]['coin']}} {{ $data->payments[0]['price'] }}
-					</p>
-					<p class="card-text">Residencial = {{ $data->residency }}</p>
-					<p class="card-text">Dirección = {{ $data->adress }}</p>
-					<p class="card-text">Características = {{ $data->characteristics[0]['features'] }}</p>
-					<p class="card-text">Amenidades = {{ $data->characteristics[0]['amenities'] }}</p>
-					<p class="card-text">Características especiales = {{ $data->characteristics[0]['specialf'] }}</p>
-					<p class="card-text">Información = {{ $data->characteristics[0]['information'] }}</p>
-					<p class="card-text">Habitaciones = {{ $data->characteristics[0]['rooms'] }}</p>
-					<p class="card-text">Baños = {{ $data->characteristics[0]['bathrooms'] }}</p>
-					<p class="card-text">Tamaño del area = {{ $data->characteristics[0]['size'] }}</p>
-					<p class="card-text">Detalles = {{ $data->characteristics[0]['details'] }}</p>
-					<p class="card-text">Latitud = {{ $data->coordinates[0]['latitude'] }}</p>
-					<p class="card-text">Longitud = {{ $data->coordinates[0]['length'] }}</p>
-					<p class="card-text">Correo = {{ $data->contacts[0]['email'] }}</p>
-					<p class="card-text">Teléfono = {{ $data->contacts[0]['phone'] }}</p>
+			<div class="card p-5 bg-light">
+				<div>
+					<h3>{{ $data->properti }} | {{ $data->city }} <span class="btn text-white btn-dark py-0"><i class="fa text-white fa-check-circle"></i> {{ $data->status }} </span></h3>
+				</div>
+				<div class="card-body px-0">
+					<h4 class="p-3 mb-2 bg-info text-white" >
+					${{ $data->payments[0]['price'] }}{{ $data->payments[0]['coin']}}
+					</h4>
+					<ul class="list-group py-2">
+						<li class="list-group-item pb-0 active"><h4>Características de la Propiedad</h4></li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> {{ $data->residency }}</li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> {{ $data->adress }}</li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> {{ $data->characteristics[0]['features'] }}</li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> {{ $data->characteristics[0]['amenities'] }}</li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> {{ $data->characteristics[0]['specialf'] }}</li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> {{ $data->characteristics[0]['information'] }}</li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> {{ $data->characteristics[0]['rooms'] }}</li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> {{ $data->characteristics[0]['bathrooms'] }}</li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> {{ $data->characteristics[0]['size'] }}</li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> {{ $data->characteristics[0]['details'] }}</li>
+					</ul>
+					@auth
+					<ul class="list-group py-2">
+						<li class="list-group-item pb-0 active"><h4>Más Información</h4></li>
+						<li class="list-group-item">Latitud {{ $data->coordinates[0]['latitude'] }}</li>
+						<li class="list-group-item">Longitud {{ $data->coordinates[0]['length'] }}</li>
+						<li class="list-group-item"><i class="fa fa-envelope  mr-2"></i> {{ $data->contacts[0]['email'] }}</li>
+						<li class="list-group-item"><i class="fa fa-phone  mr-2"></i> {{ $data->contacts[0]['phone'] }}</li>
+					</ul>
+					@endauth
 				</div>
 			</div>
 			<hr>
-			<div class="col-md-12 bg-light text-white">
+			<div class="col-md-12 p-3 mb-2 bg-light text-white">
 				<form action="{{ route('sendMailInformation') }}" method="POST" class="form-inline p-4" >
 					<div class="row">
 						@csrf
 						<div class="form-group col-md-4 p-0">
-							<img class="logo" src="{{ asset('/img/logo.jpg')}}" alt="Logo"  />
+							<div class="row d-flex justify-content-center" >
+								<a href="/">
+									<img src="{{ asset('/img/logo.jpg')}}" class="card-img-top" alt="ndgroup.mx" >
+								</a>
+								<ul class="list-group py-2">
+									<li class="list-group-item text-dark"><i class="fa fa-building mr-2"></i> Cancún, Quintana Roo 77503 | México</li>
+									<li class="list-group-item"><a class="text-dark" href="tel:5219982425617"><i class="fa fa-phone  mr-2"></i> 998 242 5617</a></li>
+									<li class="list-group-item"><a class="text-dark" href="mailto:direccion@ndgroup.mx"><i class="fa fa-envelope  mr-2"></i> direccion@ndgroup.mx</a></li>
+									<li class="list-group-item">
+										<a class="btn btn-light" target="_blank" href="https://www.facebook.com/nrealestate38"><i class="fa fa-facebook"></i></a>
+										<a class="btn btn-light" target="_blank" href="https://www.instagram.com/nd.realestatecun/"><i class="fa fa-instagram"></i></a>
+										<a class="btn btn-light" target="_blank" href="https://api.whatsapp.com/send?phone=5219982425617&text=Hola,%20información%20del%20inmueble."><i class="fa fa-whatsapp"></i></a>
+										<a class="btn btn-light" href="mailto:direccion@ndgroup.mx"><i class="fa fa-envelope"></i></a>
+									</li>
+								</ul>
+							</div>
 						</div>
 						<div class="form-group col-md-8 p-0">
 							<!-- Grid column -->
@@ -77,7 +100,7 @@
 							</div>
 							<!-- Grid column -->
 							<div class="col-md-12 mb-4 content">
-								<textarea id="content" class="col-md-12 without custom" name="content" >{{ old('content') }}</textarea>
+								<textarea class="col-md-12 without custom" placeholder="Comentarios" name="content" >{{ old('content') }}</textarea>
 							</div>
 						</div>
 						<div class="col-md-12 d-flex justify-content-center">
@@ -92,10 +115,10 @@
 	@auth
 	<div class="col-md-2 ">
 		<div class="card">
-			<div class="card-body col-md-12 "> 
+			<div class="card-body col-md-12 ">
 				<a class="btn btn-primary text-decoration-none col-md-12 mb-3" href="{{ route('editar', $data->id ) }}" role="button">Editar</a>
 				<form method="POST" class="col-md-12 p-0" id="deleteF" action="{{ route('delete', $data->id ) }}">
-					@csrf 
+					@csrf
 					@method('DELETE')
 					<button type="button" data-toggle="modal" data-target="#confirmD" class="btn btn-danger text-light col-md-12" >Eliminar</button>
 				</form>

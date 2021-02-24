@@ -20,7 +20,7 @@ use App\Http\Controllers\PropertyController;
 Route::get('/', 'PropertyController@inicio')->name('inicio');
 
 
-Route::get('/test', 'PropertyController@test')->name('test');
+Route::get('/Acerca-de-nosotros', 'PropertyController@about')->name('about');
 
 Route::get('/Submit-listing', 'PropertyController@list_show')->name('list_show');
 Route::get('/Submit-listing/search', 'PropertyController@search')->name('search');

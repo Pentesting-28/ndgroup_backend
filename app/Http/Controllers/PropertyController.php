@@ -18,10 +18,14 @@ class PropertyController extends Controller
     $this->middleware('auth')->only('crear','editar','store','update','delete');
   }
 
-	public function test(){
-    	$title = 'test';
-  	return view('test', compact('title'));
-  }
+  public function about(){
+
+      $title = 'Acerca de nosotros';
+
+     return view('about', compact('title'));
+
+   }
+
 
   public function inicio(){
     	$title = 'Inicio';
@@ -29,6 +33,7 @@ class PropertyController extends Controller
   }
 
   public function list_show(Request $request){ 
+
     $data = Property::when($request->has('name') , function ( $query ) use ( $request ) {
                         $query->where( 'properti','LIKE',"%$request->name%" );
                     })
@@ -50,6 +55,7 @@ class PropertyController extends Controller
                     ->orderBy('id', 'DESC')
                     ->paginate(8);
   	return view('details.list_show', compact('data') );
+    
   }
 
   public function search(Request $request){

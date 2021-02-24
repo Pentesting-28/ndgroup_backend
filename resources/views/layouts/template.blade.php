@@ -66,7 +66,7 @@
             <a class="nav-link" href="{{ route('contact')}}">Blog ndgroup</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('contact')}}">Acerca de Nosotros</a>
+            <a class="nav-link" href="{{ route('about')}}">Acerca de Nosotros</a>
           </li>
           <li class="nav-item {{ setActive('contact') }} ">
             <a class="nav-link " href="{{route('contact')}}">Contacto</a>
@@ -177,7 +177,7 @@
           <a class="nav-link" href="{{ route('contact')}}">Blog ndgroup</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('contact')}}">Acerca de Nosotros</a>
+          <a class="nav-link" href="{{ route('about')}}">Acerca de Nosotros</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{route('contact')}}">Contacto</a>
@@ -195,7 +195,7 @@
         <ul class="mr-auto row justify-content-center" >
           <li class="nav-item" ><a href="{{ route('list_show')}}" >Buscar Propiedades</a></li>
           <li class="nav-item" ><a href="{{ route('contact')}}">Blog ndgroup</a></li>
-          <li class="nav-item" ><a href="{{ route('contact')}}">Acerca de Nosotros</a></li>
+          <li class="nav-item" ><a href="{{ route('about')}}">Acerca de Nosotros</a></li>
           <li class="nav-item {{ setActive('contact') }}" ><a href="{{route('contact')}}">Contacto</a></li>
           <li class="nav-item" ><a href="{{ route('contact')}}">Vende tu Propiedad</a></li>
         </ul>
@@ -204,9 +204,5 @@
         <p class="mr-auto row justify-content-center copy_r ">© 2020 ndgroup Real estate, Todos Los Derechos Reservados. </p><
       </nav>
     </footer>
-
-    <input type="hidden" id="bsm_map_content">
-    
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqBPws5a6AripWzjun2W5klv21yJdYS_E&amp;callback=initMap"></script>
   </body>
 </html>
