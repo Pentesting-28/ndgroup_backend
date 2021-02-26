@@ -3,45 +3,6 @@
 
 @include('partials.validations')
 
-<script type="text/javascript">
-
-function initMap() {
-
-    "use strict";
-    
-    if ($('.bsm_style_pink_violet').length) {
-        var bsm_pin_map = '/ndgroup_backend/img/pin_icon.png';
-    } else {
-        var bsm_pin_map = '/ndgroup_backend/img/pin_icon.png';
-    }
-    var map_icon_location = {
-        lat: 21.17429,
-        lng: -86.84656
-    };
-    var map_icon_pin_icon = {
-        url: bsm_pin_map,
-        anchor: new google.maps.Point(0, 0),
-        strokeWeight: 0,
-        scaledSize: new google.maps.Size(86, 142)
-    };
-    var map = new google.maps.Map(document.getElementById('bsm_map_content'), {
-        zoom: 13,
-        center: {
-        lat: 21.17429,
-        lng: -86.84656
-        },
-        scrollwheel: false
-    });
-    var marker = new google.maps.Marker({
-        position: map_icon_location,
-        map: map,
-        title: 'puntero!',
-        icon: map_icon_pin_icon
-    });
-}
-
-</script>
-
 <section class="flex-column justify-content-center" >
   
   @include('partials.box')
@@ -49,8 +10,7 @@ function initMap() {
   <div class="d-flex col-md-12 px-0">
     <div id="bsm_map">
 
-      <!--  <iframe src="https://www.google.com/maps/embed?pb=!1m20!1m12!1m3!1d3720.4548742465386!2d-86.84878058506489!3d21.174081685919848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m5!3e6!4m3!3m2!1d21.17429!2d-86.84656!5e0!3m2!1ses-419!2smx!4v1614055356152!5m2!1ses-419!2smx" width="100%" height="530" style="border:0;" allowfullscreen="" loading="lazy"></iframe>-->
-    <div id="bsm_map_content"></div>
+      <div id="bsm_map_content"></div>{{-- map --}}
      
     </div>
     
@@ -105,6 +65,61 @@ function initMap() {
     {{ $data ->links() }}
   </nav>
 </section>
+<script>
+function initMap() {
+    "use strict";
+    if ($('.bsm_style_pink_violet').length) {
+        var bsm_pin_map = 'img/pin_icon.png';
+    } else {
+        var bsm_pin_map = 'img/pin_icon.png';
+    }
+    var locations = <?php echo json_encode($data);?>;
+    let locationsInfo = []
+    locations.data.forEach(location => {
+        location.coordinates.forEach(coordinates => {
+            let locationData = {
+                position:{
+                    lat:coordinates.latitude,
+                    lng:coordinates.length
+                }              
+            }
+            locationsInfo.push(locationData)
+        })
+    })
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition((data)=>{
+            let currentPosition = {
+                lat: data.coords.latitude,
+                lng: data.coords.longitude
+            }
+            dibujarMapa(currentPosition, locationsInfo)
+        })
+    }
+    const dibujarMapa = (obj, locationsInfo) => {
+        var map_icon_pin_icon = {
+            url: bsm_pin_map,
+            scaledSize: new google.maps.Size(30, 60)
+        };
+        let map = new google.maps.Map(document.getElementById('bsm_map_content'),{
+            zoom: 4,
+            center: obj
+        })
+        let marker = new google.maps.Marker({// Mi ubicacion
+            position: obj,
+            title: 'Tu ubicacion',
+            icon: map_icon_pin_icon
+        })
+        marker.setMap(map)
+        let markers = locationsInfo.map(place => {
+            return new google.maps.Marker({
+                position: place.position,
+                map: map,
+                icon: map_icon_pin_icon
+            })
+        })
+    }
+}
+</script>
     
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqBPws5a6AripWzjun2W5klv21yJdYS_E&amp;callback=initMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqBPws5a6AripWzjun2W5klv21yJdYS_E&amp;callback=initMap"></script>
 @endsection

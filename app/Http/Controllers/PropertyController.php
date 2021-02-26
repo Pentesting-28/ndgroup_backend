@@ -54,6 +54,7 @@ class PropertyController extends Controller
                     ->has('images')
                     ->orderBy('id', 'DESC')
                     ->paginate(8);
+    // return response()->json(['data' => $data]);
   	return view('details.list_show', compact('data') );
     
   }
