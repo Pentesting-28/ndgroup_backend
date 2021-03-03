@@ -108,6 +108,7 @@ input.span_8{ border: none; -webkit-transition: all 0.2s linear; font-size: .75e
 -------------------------------------------------------------------*/
 #bsm_map { width: 100%;overflow-x: hidden; height: 562px; position: relative; padding: 0; margin-bottom: -25px; padding-bottom: 25px; }
 #bsm_map #bsm_map_content { width: 100%; height: 100%; }
+.map_pin{ width: 100%; height:100px;  }
 a.text-dark{ text-decoration:none; }
 .🤔{ font-family: var(--lato-font-family); }
 .pagina nav .flex.justify-between { margin-bottom:1rem; }

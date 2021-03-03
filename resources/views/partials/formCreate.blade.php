@@ -86,17 +86,14 @@
 			</div>
 			
 			<div class="col-md-12 mb-3">
+				<a data-toggle="modal" data-target="#mapviews" href="#">Agregar ubicación{{--<img class="map_pin" src="{{ asset('/img/map1.jpg')}}" alt="Ubicación de la propiedad" >--}}</a>
+				@include('partials.map')
+			</div>
+
+			<div class="col-md-12 mb-3">
 				<textarea type="text" class="form-control without" value="{{old('details')}}" name="details" placeholder="Detalles" ></textarea>
 				{!! $errors->first('details','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
-			</div>
-			<div class="col-md-12 mb-3">
-				<input type="text" class="form-control" value="{{old('latitude')}}" name="latitude" placeholder="Latitud" autocomplete="off">
-				{!! $errors->first('latitude','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
-			</div>
-			<div class="col-md-12 mb-3">
-				<input type="text" class="form-control" value="{{old('length')}}" name="length" placeholder="Longitud" autocomplete="off">
-				{!! $errors->first('length','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
-			</div>
+			</div>	
 			<div class="col-md-12 mb-3">
 				<input type="text" class="form-control" value="{{old('url')}}" name="url" placeholder="URL" id="url" autocomplete="off" required>
 				{!! $errors->first('url','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
@@ -111,7 +108,6 @@
 			</div>
 		</div>
 	</div>
-
 
 	<div class="col-md-2 p-0" >		
 		<div class="col-md-12 p-2 card justify-content-center text-center" >

@@ -90,12 +90,8 @@
 				{!! $errors->first('details','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
 			</div>
 			<div class="col-md-12 mb-3">
-				<input type="text" class="form-control" value="{{old('latitude', $data->coordinates[0]['latitude'])}}" name="latitude" placeholder="Latitud" autocomplete="off">
-				{!! $errors->first('latitude','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
-			</div>
-			<div class="col-md-12 mb-3">
-				<input type="text" class="form-control" value="{{old('length', $data->coordinates[0]['length'])}}" name="length" placeholder="Longitud" autocomplete="off">
-				{!! $errors->first('length','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
+				<a data-toggle="modal" data-target="#mapviews" href="#">Actualizar ubicación{{--<img class="map_pin" src="{{ asset('/img/map1.jpg')}}" alt="Ubicación de la propiedad" >--}}</a>
+				@include('partials.map')
 			</div>
 			<div class="col-md-12 mb-3">
 				<input type="text" class="form-control" value="{{old('url', $data->url)}}" name="url" placeholder="URL" id="url" autocomplete="off">
@@ -111,7 +107,6 @@
 			</div>
 		</div>
 	</div>
-
 
 	<div class="col-md-2 p-0" >		
 		<div class="col-md-12 p-2 card justify-content-center text-center" >
