@@ -90,7 +90,7 @@
 				{!! $errors->first('details','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
 			</div>
 			<div class="col-md-12 mb-3">
-				<a data-toggle="modal" data-target="#mapviews" href="#">Actualizar ubicación{{--<img class="map_pin" src="{{ asset('/img/map1.jpg')}}" alt="Ubicación de la propiedad" >--}}</a>
+				<a data-toggle="modal" data-target="#mapviews" id="<?=$data->coordinates[0];?>" href="#">Actualizar ubicación{{--<img class="map_pin" src="{{ asset('/img/map1.jpg')}}" alt="Ubicación de la propiedad" >--}}</a>
 				@include('partials.map')
 			</div>
 			<div class="col-md-12 mb-3">

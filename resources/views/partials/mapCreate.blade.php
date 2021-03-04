@@ -13,11 +13,11 @@
                 <div class="row py-2">
                   <div class="col-md-6">
                     <label for="latitud">Latitud </label>
-                  <input type="number" class="form-control" value="{{$data->coordinates[0]['latitude']}}" name="latitude" id="latitud" disabled>
+                  <input type="number" class="form-control" value="{{old('latitude')}}" name="latitude" id="latitud">
                   </div>
                   <div class="col-md-6">
                     <label for="logitud">Logitud</label>
-                  <input type="number" class="form-control" value="{{$data->coordinates[0]['length']}}" name="length" id="logitud" disabled>
+                  <input type="number" class="form-control" value="{{old('length')}}" name="length" id="logitud">
                   </div>
 
                 </div>
@@ -34,15 +34,10 @@
 <script type="text/javascript">
 
   function initMap() {
-    let data = <?php echo json_encode($data); ?>;
-    let lat  = data.coordinates[0]['latitude'];
-    let lng  = data.coordinates[0]['length'];
-    let zoom = 13;
-    // lat = 20.973276, lng = -89.624175, zoom = 12
-    lat  = typeof lat  === 'undefined' ? 21.17429  : lat;
-    lng  = typeof lng  === 'undefined' ? -86.84656 : lng
-    zoom = typeof zoom === 'undefined' ? 13        : zoom;
 
+    let lat  = 21.17429;
+    let lng  = -86.84656;
+    let zoom = 13;
     var map = new google.maps.Map(document.getElementById("map"), {
       zoom: zoom,
       center: {

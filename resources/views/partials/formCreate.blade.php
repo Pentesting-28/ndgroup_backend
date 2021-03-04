@@ -87,7 +87,7 @@
 			
 			<div class="col-md-12 mb-3">
 				<a data-toggle="modal" data-target="#mapviews" href="#">Agregar ubicación{{--<img class="map_pin" src="{{ asset('/img/map1.jpg')}}" alt="Ubicación de la propiedad" >--}}</a>
-				@include('partials.map')
+				@include('partials.mapCreate')
 			</div>
 
 			<div class="col-md-12 mb-3">

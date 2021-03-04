@@ -109,8 +109,9 @@ function initMap() {
             title: 'Tu ubicacion',
             icon: map_icon_pin_icon
         })
-        marker.setMap(map)
+        marker.setMap(map);
         let markers = locationsInfo.map(place => {
+          console.log();
             return new google.maps.Marker({
                 position: place.position,
                 map: map,
