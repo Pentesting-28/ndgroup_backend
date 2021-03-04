@@ -35,8 +35,12 @@
 
   function initMap() {
     let data = <?php echo json_encode($data); ?>;
+
     let lat  = data.coordinates[0]['latitude'];
     let lng  = data.coordinates[0]['length'];
+
+       console.log( lat +" "+ lng );  
+
     let zoom = 13;
     // lat = 20.973276, lng = -89.624175, zoom = 12
     lat  = typeof lat  === 'undefined' ? 21.17429  : lat;
@@ -84,8 +88,7 @@
 
           $('input[name="latitude"]').val(lat);
           $('input[name="length"]').val(lng);
-
-    });
+     });
   }
 
 </script>
