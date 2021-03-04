@@ -13,11 +13,11 @@
                 <div class="row py-2">
                   <div class="col-md-6">
                     <label for="latitud">Latitud </label>
-                  <input type="number" class="form-control" value="{{old('latitude')}}" name="latitude" id="latitud">
+                  <input type="number" class="form-control" value="{{old('latitude')}}" name="latitude" id="latitud" disabled>
                   </div>
                   <div class="col-md-6">
                     <label for="logitud">Logitud</label>
-                  <input type="number" class="form-control" value="{{old('length')}}" name="length" id="logitud">
+                  <input type="number" class="form-control" value="{{old('length')}}" name="length" id="logitud" disabled>
                   </div>
 
                 </div>
