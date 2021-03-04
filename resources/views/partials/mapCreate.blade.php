@@ -45,7 +45,7 @@
         lng: lng
       }
     });
-    var bsm_pin_map = 'http://localhost/proyectosLaravel/ndgroup_backend/img/pin_icon.png';
+    var bsm_pin_map = "{{asset('/img/pin_icon.png')}}";
     var map_icon_pin_icon = {
         url: bsm_pin_map,
         scaledSize: new google.maps.Size(30, 60)
@@ -82,6 +82,6 @@
 
     });
   }
-// initMap();
+
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqBPws5a6AripWzjun2W5klv21yJdYS_E&amp;callback=initMap"></script>

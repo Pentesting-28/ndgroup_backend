@@ -69,9 +69,9 @@
 function initMap() {
     "use strict";
     if ($('.bsm_style_pink_violet').length) {
-        var bsm_pin_map = 'img/pin_icon.png';
+        var bsm_pin_map = "{{asset('/img/pin_icon.png')}}";
     } else {
-        var bsm_pin_map = 'img/pin_icon.png';
+        var bsm_pin_map = "{{asset('/img/pin_icon.png')}}";
     }
     var locations = <?php echo json_encode($data);?>;
     let locationsInfo = []

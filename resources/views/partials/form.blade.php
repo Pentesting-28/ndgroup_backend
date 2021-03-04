@@ -6,7 +6,7 @@
 			<div class="col-md-5 px-0 ">
 				<div class="row d-flex justify-content-center" >
 					<a href="/">
-						<img src="https://ndgroup.mx/img/logo.jpg" class="logo card-img" alt="Logo" >
+						<img src="{{ asset('/img/logo.jpg')}}" class="logo card-img" alt="Logo" >
 					</a>					
 					<ul class="list-group list-group-flush title_item_b ">
 						<li class="list-group-item mb-0 "><i class="fa fa-building mr-2"></i> Cancún, Quintana Roo 77503
