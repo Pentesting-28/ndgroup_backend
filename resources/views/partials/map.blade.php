@@ -11,17 +11,15 @@
             <div class="modal-body">
                 <div style="height:400px; width:100%;" id="map"></div>
                 <div class="row py-2">
-                  <div class="col-md-6">
-                    <label for="latitud">Latitud </label>
-                  <input type="number" class="form-control" value="{{$data->coordinates[0]['latitude']}}" name="latitude" id="latitud" disabled>
+                  <div class="col-md-6 py-2 px-0">
+                    <label class="latitude" ><b>Latitude:</b> {{$data->coordinates[0]['latitude']}}</label>
+                    <input type="hidden" value="{{$data->coordinates[0]['latitude']}}" name="latitude" >
                   </div>
-                  <div class="col-md-6">
-                    <label for="logitud">Logitud</label>
-                  <input type="number" class="form-control" value="{{$data->coordinates[0]['length']}}" name="length" id="logitud" disabled>
+                  <div class="col-md-6 py-2 px-0">
+                    <label class="length" ><b>Longitud:</b> {{$data->coordinates[0]['length']}} </label>
+                    <input type="hidden" value="{{$data->coordinates[0]['length']}}" name="length" >
                   </div>
-
                 </div>
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="border border-info btn btn-default" data-dismiss="modal">Aceptar</button>
@@ -30,16 +28,13 @@
     </div>
 </div>
 
-
 <script type="text/javascript">
 
   function initMap() {
-    let data = <?php echo json_encode($data); ?>;
 
+    let data = <?php echo json_encode($data); ?>;
     let lat  = data.coordinates[0]['latitude'];
     let lng  = data.coordinates[0]['length'];
-
-       console.log( lat +" "+ lng );  
 
     let zoom = 13;
     // lat = 20.973276, lng = -89.624175, zoom = 12
@@ -85,9 +80,14 @@
 
       var lat = marker.getPosition().lat();
       var lng = marker.getPosition().lng();
+      let latitude = $(".latitude");
+      let length = $(".length");
 
-          $('input[name="latitude"]').val(lat);
-          $('input[name="length"]').val(lng);
+        $('input[name="latitude"]').val(lat);
+        $('input[name="length"]').val(lng);
+
+        latitude.html(`<b>Latitude:  </b>  ${lat}`);
+        length.html(`<b>Longitud:  </b>  ${lng}`);
      });
   }
 
