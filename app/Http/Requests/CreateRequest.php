@@ -42,7 +42,7 @@ class CreateRequest extends FormRequest{
         'thumbnail'   => 'required|image|mimes:jpg,jpeg,png',
         'main_img'    => 'required|image|mimes:jpg,jpeg,png',
         'url'         => 'required|max:255',
-        'email'       => "required|string|email|max:255|unique:contacts,email,{$this->id}",
+        'email'       => "required|string|email|max:255",
         'phone'       => 'required'
     ];   
     return $rules;

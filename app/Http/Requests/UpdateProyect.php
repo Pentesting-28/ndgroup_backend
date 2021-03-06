@@ -40,7 +40,7 @@ class UpdateProyect extends FormRequest
             'city'        => 'required|max:70',
             'price'       => 'required|max:20',
             'url'         => 'required|max:255',
-            'email'       => "required|string|email|max:255|unique:contacts,email,{$this->id}",
+            'email'       => "required|string|email|max:255",
             'phone'       => 'required'
         ];     
         if($this->get('main_img')){       
