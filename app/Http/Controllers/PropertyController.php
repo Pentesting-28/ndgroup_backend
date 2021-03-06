@@ -26,6 +26,15 @@ class PropertyController extends Controller
 
    }
 
+  public function blog(){
+
+      $title = 'Blog';
+
+     return view('blog', compact('title'));
+
+   }
+   
+
 
   public function inicio(){
     	$title = 'Inicio';

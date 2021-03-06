@@ -21,6 +21,7 @@ Route::get('/', 'PropertyController@inicio')->name('inicio');
 
 
 Route::get('/Acerca-de-nosotros', 'PropertyController@about')->name('about');
+Route::get('/Blog', 'PropertyController@blog')->name('blog');
 
 Route::get('/Submit-listing', 'PropertyController@list_show')->name('list_show');
 Route::get('/Submit-listing/search', 'PropertyController@search')->name('search');

@@ -63,7 +63,7 @@
             <a class="nav-link" href="{{ route('list_show')}}">Buscar Propiedades</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('contact')}}">Blog ndgroup</a>
+            <a class="nav-link" href="{{ route('blog')}}">Blog ndgroup</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('about')}}">Acerca de Nosotros</a>
@@ -174,7 +174,7 @@
           <a class="nav-link" href="{{ route('list_show')}}?_token=ourAagSS2fOfq31ItkHctMjITWY4rgZsiLuv8r6Y&name=&status=En+Venta&city=Todas+las+ciudades&price="><i class="fas fa-angle-right"></i> En Venta</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('contact')}}">Blog ndgroup</a>
+          <a class="nav-link" href="{{ route('blog')}}">Blog ndgroup</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('about')}}">Acerca de Nosotros</a>
@@ -194,7 +194,7 @@
       <nav class="col-md-6 col-12 px-0 mx-0 justify-content-center" >
         <ul class="mr-auto row justify-content-center" >
           <li class="nav-item" ><a href="{{ route('list_show')}}" >Buscar Propiedades</a></li>
-          <li class="nav-item" ><a href="{{ route('contact')}}">Blog ndgroup</a></li>
+          <li class="nav-item" ><a href="{{ route('blog')}}">Blog ndgroup</a></li>
           <li class="nav-item" ><a href="{{ route('about')}}">Acerca de Nosotros</a></li>
           <li class="nav-item {{ setActive('contact') }}" ><a href="{{route('contact')}}">Contacto</a></li>
           <li class="nav-item" ><a href="{{ route('contact')}}">Vende tu Propiedad</a></li>
