@@ -33,19 +33,19 @@
 				{!! $errors->first('adress','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
 			</div>
 			<div class="col-md-12 mb-3">
-				<textarea type="text" class="form-control without" name="features" placeholder="Características" >{{old('features')}}</textarea>
+				<textarea type="text" class="form-control" name="features" placeholder="Características" >{{old('features')}}</textarea>
 				{!! $errors->first('features','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
 			</div>
 			<div class="col-md-12 mb-3">
-				<textarea type="text" class="form-control without" name="amenities" placeholder="Amenidades" >{{old('amenities')}}</textarea>
+				<textarea type="text" class="form-control" name="amenities" placeholder="Amenidades" >{{old('amenities')}}</textarea>
 				{!! $errors->first('amenities','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
 			</div>
 			<div class="col-md-12 mb-3">
-				<textarea type="text" class="form-control without" name="specialf" placeholder="Instalaciones especiales" >{{old('specialf')}}</textarea>
+				<textarea type="text" class="form-control" name="specialf" placeholder="Instalaciones especiales" >{{old('specialf')}}</textarea>
 				{!! $errors->first('specialf','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
 			</div>
 			<div class="col-md-12 mb-3">
-				<textarea type="text" class="form-control without" name="information" placeholder="Información" >{{old('information')}}</textarea>
+				<textarea type="text" class="form-control" name="information" placeholder="Información" >{{old('information')}}</textarea>
 				{!! $errors->first('information','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
 			</div>
 		</div>
@@ -91,7 +91,7 @@
 			</div>
 
 			<div class="col-md-12 mb-3">
-				<textarea type="text" class="form-control without" value="{{old('details')}}" name="details" placeholder="Detalles" ></textarea>
+				<textarea type="text" class="form-control" value="{{old('details')}}" name="details" placeholder="Detalles" ></textarea>
 				{!! $errors->first('details','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
 			</div>	
 			<div class="col-md-12 mb-3">

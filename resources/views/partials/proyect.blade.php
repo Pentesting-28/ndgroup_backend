@@ -33,19 +33,19 @@
 				{!! $errors->first('adress','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
 			</div>
 			<div class="col-md-12 mb-3">
-				<textarea type="text" class="form-control without" name="features" placeholder="Características" >{{old('features', $data->characteristics[0]['features'])}}</textarea>
+				<textarea type="text" class="form-control" name="features" placeholder="Características" >{{old('features', $data->characteristics[0]['features'])}}</textarea>
 				{!! $errors->first('features','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
 			</div>
 			<div class="col-md-12 mb-3">
-				<textarea type="text" class="form-control without" name="amenities" placeholder="Amenidades" >{{old('amenities', $data->characteristics[0]['amenities'])}}</textarea>
+				<textarea type="text" class="form-control" name="amenities" placeholder="Amenidades" >{{old('amenities', $data->characteristics[0]['amenities'])}}</textarea>
 				{!! $errors->first('amenities','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
 			</div>
 			<div class="col-md-12 mb-3">
-				<textarea type="text" class="form-control without" name="specialf" placeholder="Instalaciones especiales" >{{old('specialf', $data->characteristics[0]['specialf'])}}</textarea>
+				<textarea type="text" class="form-control" name="specialf" placeholder="Instalaciones especiales" >{{old('specialf', $data->characteristics[0]['specialf'])}}</textarea>
 				{!! $errors->first('specialf','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
 			</div>
 			<div class="col-md-12 mb-3">
-				<textarea type="text" class="form-control without" name="information" placeholder="Información" >{{old('information', $data->characteristics[0]['information'])}}</textarea>
+				<textarea type="text" class="form-control" name="information" placeholder="Información" >{{old('information', $data->characteristics[0]['information'])}}</textarea>
 				{!! $errors->first('information','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
 			</div>
 		</div>
@@ -86,7 +86,7 @@
 			</div>
 			
 			<div class="col-md-12 mb-3">
-				<textarea type="text" class="form-control without" value="{{old('details', $data->characteristics[0]['details'])}}" name="details" placeholder="Detalles" >{{old('details', $data->characteristics[0]['details'])}}</textarea>
+				<textarea type="text" class="form-control" value="{{old('details', $data->characteristics[0]['details'])}}" name="details" placeholder="Detalles" >{{old('details', $data->characteristics[0]['details'])}}</textarea>
 				{!! $errors->first('details','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
 			</div>
 			<div class="col-md-12 mb-3">

@@ -67,7 +67,7 @@
 </section>
 <script>
 function initMap() {
-    "use strict";
+
     if ($('.bsm_style_pink_violet').length) {
         var bsm_pin_map = "{{asset('/img/pin_icon.png')}}";
     } else {
@@ -101,20 +101,22 @@ function initMap() {
             scaledSize: new google.maps.Size(30, 60)
         };
         let map = new google.maps.Map(document.getElementById('bsm_map_content'),{
-            zoom: 4,
+            zoom: 8,
             center: obj
         })
-        let marker = new google.maps.Marker({// Mi ubicacion
+        
+        let marker = new google.maps.Marker({// Mi ubicacion 
             position: obj,
-            title: 'Tu ubicacion',
+            title: 'Ubicado en ' + locations.data[0].city,
             icon: map_icon_pin_icon
         })
+
         marker.setMap(map);
         let markers = locationsInfo.map(place => {
-          console.log();
             return new google.maps.Marker({
                 position: place.position,
                 map: map,
+                title: locations.data[0].properti,
                 icon: map_icon_pin_icon
             })
         })
