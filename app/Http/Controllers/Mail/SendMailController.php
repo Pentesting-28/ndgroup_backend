@@ -37,10 +37,10 @@ class SendMailController extends Controller
       Session::flash('email','¡Mensaje enviado correctamente!'); 
       return back();
     } catch (Exception $e) {
-        return response()->json([
+        return [
           'error' => 'SendMail.sendmail.failed',
           'message' => $e->getMessage()
-        ], 442);
+        ];
     }
   }
 
@@ -57,10 +57,10 @@ class SendMailController extends Controller
       Session::flash('email','¡Mensaje enviado correctamente!'); 
       return back();
     } catch (Exception $e) {
-        return response()->json([
+        return [
           'error' => 'SendMail.sendmail.failed',
           'message' => $e->getMessage()
-        ], 442);
+        ];
     }
   }
 }
