@@ -27,16 +27,16 @@
 					</h4>
 					<ul class="list-group py-2">
 						<li class="list-group-item pb-0 active"><h4>Características de la Propiedad</h4></li>
-						<li class="list-group-item"><i class="far fa-check-square"></i> {{ $data->residency }}</li>
-						<li class="list-group-item"><i class="far fa-check-square"></i> {{ $data->adress }}</li>
-						<li class="list-group-item"><i class="far fa-check-square"></i> {{ $data->characteristics[0]['features'] }}</li>
-						<li class="list-group-item"><i class="far fa-check-square"></i> {{ $data->characteristics[0]['amenities'] }}</li>
-						<li class="list-group-item"><i class="far fa-check-square"></i> {{ $data->characteristics[0]['specialf'] }}</li>
-						<li class="list-group-item"><i class="far fa-check-square"></i> {{ $data->characteristics[0]['information'] }}</li>
-						<li class="list-group-item"><i class="far fa-check-square"></i> {{ $data->characteristics[0]['rooms'] }}</li>
-						<li class="list-group-item"><i class="far fa-check-square"></i> {{ $data->characteristics[0]['bathrooms'] }}</li>
-						<li class="list-group-item"><i class="far fa-check-square"></i> {{ $data->characteristics[0]['size'] }}</li>
-						<li class="list-group-item"><i class="far fa-check-square"></i> {{ $data->characteristics[0]['details'] }}</li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> {{$data->residency}}</li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> Ubicado en {{$data->adress}}</li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> {{$data->characteristics[0]['features']}}</li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> {{$data->characteristics[0]['amenities']}}</li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> {{$data->characteristics[0]['specialf']}}</li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> {{$data->characteristics[0]['information']}}</li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> {{$data->characteristics[0]['rooms']}}</li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> {{$data->characteristics[0]['bathrooms']}}</li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> Dimensión {{$data->characteristics[0]['size']}}</li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> {{$data->characteristics[0]['details']}}</li>
 					</ul>
 					@auth
 					<ul class="list-group py-2">
