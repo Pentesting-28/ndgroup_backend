@@ -15,8 +15,8 @@ class CreateCoordinatesTable extends Migration
     {
         Schema::create('coordinates', function (Blueprint $table) {
             $table->id();
-            $table->double('latitude',50)->nullable();
-            $table->double('length',50)->nullable();
+            $table->string('latitude',50)->nullable();
+            $table->string('length',50)->nullable();
             $table->foreignId('property_id')->references('id')->on('properties')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

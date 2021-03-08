@@ -21,7 +21,7 @@ class CreateCharacteristicsTable extends Migration
             $table->text('information',400)->nullable();
             $table->string('rooms',1)->nullable();
             $table->string('bathrooms',1)->nullable();
-            $table->string('size',10)->nullable();
+            $table->string('size',255)->nullable();
             $table->text('details',255)->nullable();//temporal
             $table->foreignId('property_id')->references('id')->on('properties')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
