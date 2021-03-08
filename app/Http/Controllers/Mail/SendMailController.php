@@ -33,7 +33,7 @@ class SendMailController extends Controller
                         })
                         ->first();
       if(!$data){throw new Exception('Propiedad no encontrada', 504);}
-      Mail::to('mpenav28@gmail.com')->send(new SendMailInformation($request->all(), $data));
+      Mail::to('direccion@ndgroup.mx')->send(new SendMailInformation($request->all(), $data));
       Session::flash('email','¡Mensaje enviado correctamente!'); 
       return back();
     } catch (Exception $e) {
@@ -53,7 +53,7 @@ class SendMailController extends Controller
         'phone'   => 'required',
         'content' => 'required',
       ]);
-      Mail::to('mpenav28@gmail.com')->send(new SendMailContact($request->all()));
+      Mail::to('direccion@ndgroup.mx')->send(new SendMailContact($request->all()));
       Session::flash('email','¡Mensaje enviado correctamente!'); 
       return back();
     } catch (Exception $e) {

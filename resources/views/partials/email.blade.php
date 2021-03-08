@@ -4,56 +4,52 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
-<title>Mensaje {{$request['name']}} https://ndgroup.mx/</title>
-<style type="text/css">
-body { -webkit-text-size-adjust: none;-ms-text-size-adjust: none;margin: 0;padding: 0;}
-.title_t { border-top: 1px solid #f2f2f2;color: rgb(153, 153, 153);font-size: 12px;font-weight: 400;padding-top: 10px;text-transform:uppercase; }
-.container-padding{ background:#fff; padding:0px 30px 0px 30px; font:normal 13px/17px tahoma; color:#333; border: 1px solid #f2f2f2; }
-.from{ font:normal 16px/24px tahoma; color:#666; text-transform:uppercase; text-align:center; margin-bottom:20px; }
-.logo{ width: 170px; }
-table {border-spacing: 0;}
-table td {border-collapse: collapse;}
-@media screen and (max-width: 600px) {
-    table[class="container"] {
-    width: 95% !important;
-    }
-}
-@media screen and (max-width: 480px) {
-    td[class="container-padding"] {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-    }
-}
-</style>
+<title>Information Email {{ $request['name'] }} https://ndgroup.mx/</title>  
 </head>
 <body>
-    <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" bgcolor="#fbfbfb">
-        <tr>
-            <td align="center" valign="top" >
-                <table border="0" width="600" cellpadding="0" cellspacing="0" class="container" bgcolor="#fff">
-                    <tr>
-                        <td class="container-padding">
-                           <div align="center">
-                                <img class="logo" src="https://ndgroup.mx/img/logo.jpg" alt="{{$request['name']}} Acaba de contactar desde https://ndgroup.mx/" />
-                            </div>
-                            <div class="from" > {{$request['name']}} Acaba de contactar desde 
-                                <a target="_blank" href="https://ndgroup.mx/">ndgroup.mx </a>
-                            </div>
-                            <p>Datos de la persona.</p>
-                            <h3 class="title_t">Nombre:</h3>
-                            <p> {{$request['name']}}</p>
-                            <h3 class="title_t">Correo:</h3>
-                            <p> {{$request['email']}}</p>
-                            <h3 class="title_t">Numero de Teléfono:</h3>
-                            <p>{{$request['phone']}}</p>
-                            <h3 class="title_t">Mensaje redactado:</h3>
-                            <p>{{$request['content']}}</p>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-    <br><br>
+
+<style type="text/css"> 
+.container{margin:0px auto;padding: 0 3rem 3rem ;display: inline-block;width: 90%;}
+div .list-group{ width: 100%; }
+.list-group, .list-group *{display:inline-block;float: left;margin: 0px;padding: 0px;list-style: none;}
+.menu{width: 90%;}
+.list-group-item{padding:5px 0px 5px 10px;background-color: #fff;border-bottom: 1px solid rgba(0,0,0,0.125);margin: 6px 0px;border-left: 1px solid rgba(0,0,0,0.125);font-size: 17px;}
+.list-group-item * { margin-bottom:0px; } 
+.list-group li{width: 90%;}  
+.subtitle{color: #004085;background-color: #cce5ff;border-color: #b8daff;padding: 0.75rem 1.25rem;margin-top:1rem;border: 1px solid transparent; }
+.properti{margin: 1rem 0px 1rem;}
+.title{width:100%; font-size:21px; margin: 1rem 0; }
+</style> 
+
+<div class="container" >
+   <ul class="list-group">
+        <div class="menu" > 
+            <img class="logo" src="{{asset('/img/logo.jpg')}}" alt="{{$request['name']}} Acaba de contactar desde {{route('inicio')}}" />            
+            <h1 class="title" ><label>{{$request['name']}}&nbsp;acaba de contactar desde &nbsp;</label><a target="_blank" href="{{route('inicio')}}">{{route('inicio')}}</a></h1>
+        </div>
+        <li class="subtitle" >
+            <div>
+                 <h3>Datos de la persona.</h3>    
+            </div>           
+        </li>
+        <li class="list-group-item">
+            <h5>Nombre:</h5>
+            <p>&nbsp;{{$request['name']}}</p>
+        </li>
+        <li class="list-group-item">
+            <h5>Correo:</h5>
+            <p>&nbsp;{{$request['email']}}</p>
+        </li>
+        <li class="list-group-item">
+            <h5>Teléfono:</h5>
+            <p>&nbsp;{{$request['phone']}}</p>
+        </li>
+        <li class="list-group-item">
+            <h5>Mensaje:</h5>
+            <p>&nbsp;{{$request['content']}}</p>
+        </li>
+    </ul>
+</div>
+
 </body>
 </html>
