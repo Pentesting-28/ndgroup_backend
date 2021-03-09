@@ -45,8 +45,8 @@
     var map = new google.maps.Map(document.getElementById("map"), {
       zoom: zoom,
       center: {
-        lat: lat,
-        lng: lng
+        lat: parseFloat(lat),
+        lng: parseFloat(lng)
       }
     });
     var bsm_pin_map = "{{asset('/img/pin_icon.png')}}";
@@ -60,8 +60,8 @@
       draggable: true,
       animation: google.maps.Animation.DROP,
       position: {
-        lat: lat,
-        lng: lng
+        lat: Number(lat),
+        lng: Number(lng)
       },
       icon: map_icon_pin_icon
     });
