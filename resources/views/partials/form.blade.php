@@ -1,6 +1,6 @@
 {{--Validacion--}}
 @include('partials.validations')
-<section class="col-xl-12 row my-5 mx-0 px-0 justify-content-center" id="wrapper" >
+<section class="col-xl-12 row mb-5 mx-0 px-0 justify-content-center" id="wrapper" >
 	<div class="row col-xl-10 px-0 justify-content-center">		
 		<div class="row col-xl-12 px-0 evenly">
 			<div class="col-md-5 px-0 ">

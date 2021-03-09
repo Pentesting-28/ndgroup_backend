@@ -8,9 +8,7 @@
       <li class="breadcrumb-item active" aria-current="page">{!!$title!!}</li>
     </ol>
   </nav>
-  <div class="row">
       <div class="container">
-          <div class="row">
             <!-- Post Content Column -->
             <div class="col-md-12 px-0 py-3">
               <!-- Title -->
@@ -59,9 +57,6 @@
               </div>
               
             </div>
-
-          </div>
         </div>
-  </div>
 </section>
 @endsection('seccion')

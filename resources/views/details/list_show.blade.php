@@ -2,18 +2,12 @@
 @section('seccion')
 
 @include('partials.validations')
-
-<section class="flex-column justify-content-center" >
-  
-  @include('partials.box')
-  
+<section class="flex-column justify-content-center" >  
+  @include('partials.box')  
   <div class="d-flex col-md-12 px-0">
     <div id="bsm_map">
-
-      <div id="bsm_map_content"></div>{{-- map --}}
-     
-    </div>
-    
+      <div id="bsm_map_content"></div>     
+    </div>    
   </div>
   <!-- END MAP -->
   <hr>
@@ -65,64 +59,69 @@
     {{ $data ->links() }}
   </nav>
 </section>
+
 <script>
-function initMap() {
 
-    if ($('.bsm_style_pink_violet').length) {
-        var bsm_pin_map = "{{asset('/img/pin_icon.png')}}";
-    } else {
-        var bsm_pin_map = "{{asset('/img/pin_icon.png')}}";
-    }
-    var locations = <?php echo json_encode($data);?>;
-    let locationsInfo = []
-    locations.data.forEach(location => {
-        location.coordinates.forEach(coordinates => {
-            let locationData = {
-                position:{
-                    lat:coordinates.latitude,
-                    lng:coordinates.length
-                }              
-            }
-            locationsInfo.push(locationData)
-        })
-    })
-    if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition((data)=>{
-            let currentPosition = {
-                lat: data.coords.latitude,
-                lng: data.coords.longitude
-            }
-            dibujarMapa(currentPosition, locationsInfo)
-        })
-    }
-    const dibujarMapa = (obj, locationsInfo) => {
-        var map_icon_pin_icon = {
-            url: bsm_pin_map,
-            scaledSize: new google.maps.Size(30, 60)
-        };
-        let map = new google.maps.Map(document.getElementById('bsm_map_content'),{
-            zoom: 8,
-            center: obj
-        })
-        
-        let marker = new google.maps.Marker({// Mi ubicacion 
-            position: obj,
-            title: 'Ubicado en ' + locations.data[0].city,
-            icon: map_icon_pin_icon
-        })
+  function initMap() {
 
-        marker.setMap(map);
-        let markers = locationsInfo.map(place => {
-            return new google.maps.Marker({
-                position: place.position,
-                map: map,
-                title: locations.data[0].properti,
-                icon: map_icon_pin_icon
+      if ($('.bsm_style_pink_violet').length) {
+          var bsm_pin_map = "{{asset('/img/pin_icon.png')}}";
+      } else {
+          var bsm_pin_map = "{{asset('/img/pin_icon.png')}}";
+      }
+
+      var locations = <?php echo json_encode($data);?>;
+      let locationsInfo = []
+     
+       locations.data.forEach(location => {
+            location.coordinates.forEach(coordinates => {
+                let locationData = {
+                    position:{
+                        lat:parseFloat(coordinates.latitude),
+                        lng:parseFloat(coordinates.length)
+                    }              
+                }
+                locationsInfo.push(locationData)
             })
         })
-    }
-}
+
+      if(navigator.geolocation){
+          navigator.geolocation.getCurrentPosition((data)=>{
+              let currentPosition = {
+                  lat: Number(data.coords.latitude),
+                  lng: Number(data.coords.longitude)
+              }
+              dibujarMapa(currentPosition, locationsInfo)
+          })
+      }
+
+      const dibujarMapa = (obj, locationsInfo) => {
+          var map_icon_pin_icon = {
+              url: bsm_pin_map,
+              scaledSize: new google.maps.Size(30, 60)
+          };
+          let map = new google.maps.Map(document.getElementById('bsm_map_content'),{
+              zoom: 8,
+              center: obj
+          })
+          
+          let marker = new google.maps.Marker({// Mi ubicacion 
+              position: obj,
+              title: "NDGROUP.MX", //'Ubicado en ' + locations.data[0].city,
+              icon: map_icon_pin_icon
+          })
+
+          marker.setMap(map);
+          let markers = locationsInfo.map(place => {
+              return new google.maps.Marker({
+                  position: place.position,
+                  map: map,
+                  title: "Tu ubicación",//locations.data[0].properti,
+                  icon: map_icon_pin_icon
+              })
+          })
+      }
+  }
 </script>
-    
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqBPws5a6AripWzjun2W5klv21yJdYS_E&amp;callback=initMap"></script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqBPws5a6AripWzjun2W5klv21yJdYS_E&amp;callback=initMap"></script>
 @endsection

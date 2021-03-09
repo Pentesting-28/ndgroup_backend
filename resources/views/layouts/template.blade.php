@@ -8,35 +8,33 @@
     <meta name="theme-color" content="#181818">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="cillum dolore eu fugiat nulla pariatur mollit anim id est laborum." />
-    <meta name="keywords" content="quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo." />
+    <meta name="description" content="Nosotros somos un grupo integral, en el cual tenemos nodos varios de negocio en Real Estate, desde la comercialización de propiedades, remodelación, hasta desarrollo de proyectos inmobiliarios de valor agregado que nacen de la experiencia y resultados comprobables de haber construido y comercializado proyectos propios para ahora ampliar su alcance con inversionistas privados que desean generar rendimientos atractivos aportando capital y terrenos." />
+    <meta name="keywords" content="Desarrollamos proyectos pequeños o boutique que generen rendimiento rápido y concreto a los inversionistas que quieren innovar para obtener resultados tangibles." />
     
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="shortcut icon" href="https://ndgroup.mx/img/logo.jpg" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{asset('/img/logo.jpg')}}" type="image/x-icon" />
     
     <title> {{ config('app.name') }} | ndgroup.mx </title>
+
     <!-- You can use Open Graph tags to customize link previews.
     Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
-    <meta property="og:url"           content="https://ndgroup.mx/" />
-    <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
-    <meta property="og:description"   content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
-    <meta property="fb:app_id"          content="111592683653923" />
-    <meta property="og:image" content="https://ndgroup.mx/img/logo.jpg" />
-    <meta property="og:image:alt" content="quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse" />
+    <meta property="og:url"   content="https://ndgroup.mx/" />
+    <meta property="og:type"  content="website" />
+    <meta property="og:title" content="Desarrollamos proyectos pequeños o boutique que generen rendimiento rápido y concreto a los inversionistas que quieren innovar para obtener resultados tangibles." />
+    <meta property="og:description" content="Nosotros somos un grupo integral, en el cual tenemos nodos varios de negocio en Real Estate, desde la comercialización de propiedades, remodelación, hasta desarrollo de proyectos inmobiliarios de valor agregado que nacen de la experiencia y resultados comprobables de haber construido y comercializado proyectos propios para ahora ampliar su alcance con inversionistas privados que desean generar rendimientos atractivos aportando capital y terrenos." />
+    <meta property="fb:app_id" content="111592683653923" />
+    <meta property="og:image" content="{{asset('/img/logo.jpg')}}" />
+    <meta property="og:image:alt" content="©2021 ndgroup.mx Real estate, Todos Los Derechos Reservados." />
    
     <!--CSS-->
+    <link type="text/css" rel="stylesheet" media="screen" href="{{ asset('/css/bootstrap.css')}}" ></link>
     <link type="text/css" rel="stylesheet" media="screen" href="{{ asset('/css/fonts/fonts.css')}}" ></link>
     <link type="text/css" rel="stylesheet" media="screen" href="{{ asset('/css/fonts/fonts_icons.css')}}" ></link>
     <link type="text/css" rel="stylesheet" media="screen" href="{{ asset('/css/fonts/all.min.css')}}" ></link>
-    <link type="text/css" rel="stylesheet" media="screen" href="{{ asset('/css/bootstrap.css')}}" ></link>
     <link type="text/css" rel="stylesheet" media="screen" href="{{ asset('/css/toastr.css')}}" ></link>
-    <link type="text/css" rel="stylesheet" media="screen" href="{{ asset('/css/main.css')}}" ></link>
     <link type="text/css" rel="stylesheet" media="screen" href="{{ asset('/css/jquery-ui.css')}}" ></link>
+    <link type="text/css" rel="stylesheet" media="screen" href="{{ asset('/css/main.css')}}" ></link>
     
     <!--JS-->
     <script type="text/javascript" language="javascript" src="{{ asset('/js/jquery-3.3.1.js')}}" ></script>
@@ -46,16 +44,13 @@
     <script type="text/javascript" language="javascript" src="{{ asset('/js/stringToSlug.js')}}" ></script>
     <script type="text/javascript" language="javascript" src="{{ asset('/js/toastr.js')}}" ></script>
     <script type="text/javascript" language="javascript" src="{{ asset('/js/config.js')}}" ></script> 
-   
-    
+
   </head>
   <body>
     <div class="container-fluid justify-content-center m_bg">
       <header class="justify-content-center" >
-
-              <!-- Header Desktop-->
-        <ul class="nav justify-content-center desktop">
-            
+        <!-- Header Desktop-->
+        <ul class="nav justify-content-center desktop">            
           <li class="nav-item {{ setActive('inicio') }}">
             <a class="nav-link " href="{{route('inicio')}}"><img class="logo" src="{{ asset('/img/logo.jpg')}}" alt="Logo"  /></a>
           </li>
@@ -74,11 +69,8 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ route('contact')}}">Vende tu Propiedad</a>
           </li>
-
           @auth
-
           <li class="nav-item">
-
               <div class="btn-group">
                 <button type="button" class="btn btn-danger dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Opción
@@ -90,16 +82,12 @@
                   <a class="dropdown-item logout" href="#">{{ auth()->user()->name }} | Cerrar Sesión</a>
                 </div>
               </div>
-
           </li>
-
           @else
           <li class="nav-item">
             <a class="nav-link" data-toggle="modal" data-target="#login" href="#">Iniciar Sesión / Registrarse </a>
           </li>
-
          @endauth
-
         </ul>
         <!-- movile -->
         <nav class="p-0 movile" >
@@ -108,9 +96,7 @@
               <li class="col-4 px-0 py-2 menu_m">
                 <a href="{{route('inicio')}}"><img src="{{ asset('/img/logo.jpg')}}" class="rounded-0" alt="Logo"  /></a>
               </li>
-
               @auth
-
               <li class="col-5 justify-content-end d-flex login-register p-0 " >
 
               <div class="btn-group">
@@ -124,19 +110,14 @@
                   <a class="dropdown-item logout" href="#">{{ auth()->user()->name }} | Cerrar Sesión</a>
                 </div>
               </div>
-
               </li>
-
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
-
-              @else
-              
+              @else              
               <li class="col-5 justify-content-end d-flex login-register p-0 " >
                 <a href="{{ route('login') }}">Iniciar Sesión / Registrarse</a>
               </li>
-
               @endauth
               <li class="col-2 justify-content-end d-flex px-0" >
                 <button id="menu_f" class="navbar navbar-light bg-dark" type="button" >
@@ -153,40 +134,36 @@
         </div>
       </header>
       <main class="justify-content-center" >
-
-      @include('partials.login')
-        
+      @include('partials.login')        
       @yield('seccion')<hr>
-
       @include('partials.form')
-
       </main>
 
-    <div id="menu_item">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="{{ route('list_show')}}">Buscar Propiedades</a>
-        </li>
-        <li class="nav-item rent">           
-          <a class="nav-link" href="{{ route('list_show')}}?_token=ourAagSS2fOfq31ItkHctMjITWY4rgZsiLuv8r6Y&name=&status=En+Renta&city=Todas+las+ciudades&price="><i class="fas fa-angle-right"></i> En Renta</a>
-        </li>
-        <li class="nav-item rent">          
-          <a class="nav-link" href="{{ route('list_show')}}?_token=ourAagSS2fOfq31ItkHctMjITWY4rgZsiLuv8r6Y&name=&status=En+Venta&city=Todas+las+ciudades&price="><i class="fas fa-angle-right"></i> En Venta</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('blog')}}">Blog ndgroup</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('about')}}">Acerca de Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('contact')}}">Contacto</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('contact')}}">Vende tu Propiedad</a>
-        </li>
-      </ul>
-    </div>
+        <div id="menu_item">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="{{ route('list_show')}}">Buscar Propiedades</a>
+            </li>
+            <li class="nav-item rent">           
+              <a class="nav-link" href="{{ route('list_show')}}?name=&status=En+Renta&price="><i class="fas fa-angle-right"></i> En Renta</a>
+            </li>
+            <li class="nav-item rent">          
+              <a class="nav-link" href="{{ route('list_show')}}?name=&status=En+Venta&price="><i class="fas fa-angle-right"></i> En Venta</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('blog')}}">Blog ndgroup</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('about')}}">Acerca de Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('contact')}}">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('contact')}}">Vende tu Propiedad</a>
+            </li>
+          </ul>
+        </div>
 
     </div>
 
@@ -205,4 +182,5 @@
       </nav>
     </footer>
   </body>
+
 </html>

@@ -15,9 +15,7 @@
 		<img src="{{ $data->images[0]['main_img'] }}" class="img-fluid" alt="{{ $data->properti }}">
 		<hr>
 	</div>
-	<div class="col-md-10">
-		<div class="container">
-			<div class="card p-5 bg-light">
+	<div class="col-md-10 m-auto">
 				<div>
 					<h3>{{ $data->properti }} | {{ $data->city }} <span class="btn text-white btn-dark py-0"><i class="fa text-white fa-check-circle"></i> {{ $data->status }} </span></h3>
 				</div>
@@ -33,8 +31,8 @@
 						<li class="list-group-item"><i class="far fa-check-square"></i> {{$data->characteristics[0]['amenities']}}</li>
 						<li class="list-group-item"><i class="far fa-check-square"></i> {{$data->characteristics[0]['specialf']}}</li>
 						<li class="list-group-item"><i class="far fa-check-square"></i> {{$data->characteristics[0]['information']}}</li>
-						<li class="list-group-item"><i class="far fa-check-square"></i> {{$data->characteristics[0]['rooms']}}</li>
-						<li class="list-group-item"><i class="far fa-check-square"></i> {{$data->characteristics[0]['bathrooms']}}</li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> Habitaciones {{$data->characteristics[0]['rooms']}}</li>
+						<li class="list-group-item"><i class="far fa-check-square"></i> Baños {{$data->characteristics[0]['bathrooms']}}</li>
 						<li class="list-group-item"><i class="far fa-check-square"></i> Dimensión {{$data->characteristics[0]['size']}}</li>
 						<li class="list-group-item"><i class="far fa-check-square"></i> {{$data->characteristics[0]['details']}}</li>
 					</ul>
@@ -48,7 +46,6 @@
 					</ul>
 					@endauth
 				</div>
-			</div>
 			<hr>
 			<div class="col-md-12 p-3 mb-2 bg-light text-white">
 				<form action="{{ route('sendMailInformation') }}" method="POST" class="form-inline p-4" >
@@ -109,9 +106,7 @@
 					</div>
 				</form>
 			</div>
-		</div>
-	</div>
-	
+	</div>	
 	@auth
 	<div class="col-md-2 ">
 		<div class="card">
