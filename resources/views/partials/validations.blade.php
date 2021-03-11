@@ -34,15 +34,15 @@
 						<ul class="list-group pl-3 list-group-flush col-md-12">
 							<li class="list-group-item row social_m" >
 								<a class="btn btn-light btn_fb" target="_blank" href="https://www.facebook.com/nrealestate38"><i class="fa fa-facebook"></i></a>
-								<a class="btn btn-light btn_insta" target="_blank" href="#"><i class="fa fa-instagram"></i></a>
+								<a class="btn btn-light btn_insta" target="_blank" href="https://www.instagram.com/nd.realestatecun/"><i class="fa fa-instagram"></i></a>
 								<a class="btn btn-light btn_whatsp" target="_blank" href="https://api.whatsapp.com/send?phone=5219982425617&text=Hola,%20información%20del%20inmueble."><i class="fa fa-whatsapp"></i></a>
-								<a class="btn btn-light btn_mail" href="mailto:noyacontacto@gmail.com"><i class="fa fa-envelope"></i></a>
+								<a class="btn btn-light btn_mail" href="mailto:direccion@ndgroup.mx"><i class="fa fa-envelope"></i></a>
 							</li>
 						</ul>
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+					<button type="button" class="btn btn-dark" data-dismiss="modal">Cerrar</button>
 				</div>
 			</div>
 		</div>

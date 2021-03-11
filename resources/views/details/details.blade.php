@@ -15,16 +15,16 @@
 		<img src="{{ $data->images[0]['main_img'] }}" class="img-fluid" alt="{{ $data->properti }}">
 		<hr>
 	</div>
-	<div class="col-md-10 m-auto">
+	<div class="col-md-8 m-auto">
 				<div>
 					<h3>{{ $data->properti }} | {{ $data->city }} <span class="btn text-white btn-dark py-0"><i class="fa text-white fa-check-circle"></i> {{ $data->status }} </span></h3>
 				</div>
 				<div class="card-body px-0">
-					<h4 class="p-3 mb-2 bg-info text-white" >
+					<h4 class="p-3 mb-2 bg-dark text-white" >
 					${{ $data->payments[0]['price'] }}{{ $data->payments[0]['coin']}}
 					</h4>
 					<ul class="list-group py-2">
-						<li class="list-group-item pb-0 active"><h4>Características de la Propiedad</h4></li>
+						<li class="list-group-item bg-dark pb-0 "><h4 class="text-white" >Características de la Propiedad</h4></li>
 						<li class="list-group-item"><i class="far fa-check-square"></i> {{$data->residency}}</li>
 						<li class="list-group-item"><i class="far fa-check-square"></i> Ubicado en {{$data->adress}}</li>
 						<li class="list-group-item"><i class="far fa-check-square"></i> {{$data->characteristics[0]['features']}}</li>
@@ -38,7 +38,7 @@
 					</ul>
 					@auth
 					<ul class="list-group py-2">
-						<li class="list-group-item pb-0 active"><h4>Más Información</h4></li>
+						<li class="list-group-item pb-0 bg-dark"><h4 class="text-white" >Más Información</h4></li>
 						<li class="list-group-item">Latitud {{ $data->coordinates[0]['latitude'] }}</li>
 						<li class="list-group-item">Longitud {{ $data->coordinates[0]['length'] }}</li>
 						<li class="list-group-item"><i class="fa fa-envelope  mr-2"></i> {{ $data->contacts[0]['email'] }}</li>
@@ -69,7 +69,7 @@
 								</ul>
 							</div>
 						</div>
-						<div class="form-group col-md-8 p-0">
+						<div class="form-group col-md-7 m-auto p-0">
 							<!-- Grid column -->
 							<div class="col-md-12 mb-4">
 								<h5 class="widget-title text-dark mb-0">Solicitar más Información</h5>
@@ -101,7 +101,7 @@
 							</div>
 						</div>
 						<div class="col-md-12 d-flex justify-content-center">
-							<input type="submit" class="btn btn-info" value="Solicitar Información">
+							<input type="submit" class="btn btn-dark" value="Solicitar Información">
 						</div>
 					</div>
 				</form>

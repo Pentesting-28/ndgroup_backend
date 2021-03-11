@@ -45,7 +45,7 @@ div.row a .logo{ width:120px;  }
 .mr-auto.row li{ display: inline-block;  margin: 0 10px 0 0; }
 .mr-auto.row li a, nav .copy a{ margin: 0 12px 0 0; padding: 0px; font-size:12px; color:var(--menu); font-family: var(--lato-font-family); }
 
-.items_list{ display: flex;align-items: flex-start;justify-content:center; flex-wrap: wrap; margin:0px auto; }
+.items_list{ display: flex;align-items: flex-start; flex-wrap: wrap; margin:0px auto; }
 .card_height{ height:200px; }
 .pointer{ cursor:pointer; }
 .items_list div.card{width:26rem; margin:10px; box-shadow:-1px 1px 5px 0 rgb(128 128 128 / 36%), 10px -7px 10px 0 rgb(177 177 177 / 10%); }

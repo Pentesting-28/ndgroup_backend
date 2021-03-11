@@ -7,8 +7,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#181818">
     <meta name="theme-color" content="#181818">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <meta name="description" content="Nosotros somos un grupo integral, en el cual tenemos nodos varios de negocio en Real Estate, desde la comercialización de propiedades, remodelación, hasta desarrollo de proyectos inmobiliarios de valor agregado que nacen de la experiencia y resultados comprobables de haber construido y comercializado proyectos propios para ahora ampliar su alcance con inversionistas privados que desean generar rendimientos atractivos aportando capital y terrenos." />
+   
     <meta name="keywords" content="Desarrollamos proyectos pequeños o boutique que generen rendimiento rápido y concreto a los inversionistas que quieren innovar para obtener resultados tangibles." />
     
     <!-- CSRF Token -->
@@ -22,7 +25,9 @@
     <meta property="og:url"   content="https://ndgroup.mx/" />
     <meta property="og:type"  content="website" />
     <meta property="og:title" content="Desarrollamos proyectos pequeños o boutique que generen rendimiento rápido y concreto a los inversionistas que quieren innovar para obtener resultados tangibles." />
+    
     <meta property="og:description" content="Nosotros somos un grupo integral, en el cual tenemos nodos varios de negocio en Real Estate, desde la comercialización de propiedades, remodelación, hasta desarrollo de proyectos inmobiliarios de valor agregado que nacen de la experiencia y resultados comprobables de haber construido y comercializado proyectos propios para ahora ampliar su alcance con inversionistas privados que desean generar rendimientos atractivos aportando capital y terrenos." />
+   
     <meta property="fb:app_id" content="111592683653923" />
     <meta property="og:image" content="{{asset('/img/logo.jpg')}}" />
     <meta property="og:image:alt" content="©2021 ndgroup.mx Real estate, Todos Los Derechos Reservados." />
@@ -72,7 +77,7 @@
           @auth
           <li class="nav-item">
               <div class="btn-group">
-                <button type="button" class="btn btn-danger dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn btn-dark dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Opción
                 </button>
                 <div class="dropdown-menu">
@@ -100,7 +105,7 @@
               <li class="col-5 justify-content-end d-flex login-register p-0 " >
 
               <div class="btn-group">
-                <button type="button" class="btn btn-info dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn btn-dark dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Opción
                 </button>
                 <div class="dropdown-menu">
@@ -129,7 +134,7 @@
         </nav>
         <div class="row justify-content-end mb-4 sendlist" >
           <div class="col-sm-4">
-            <a href="{{ route('list_show')}}" class="btn btn-success" >Ver Propiedades</a>
+            <a href="{{ route('list_show')}}" class="btn btn-dark" >Ver Propiedades</a>
           </div>
         </div>
       </header>

@@ -2,17 +2,19 @@
 @section('seccion')
 
 <section class="flex-column justify-content-center" >
+
    <nav aria-label="breadcrumb" >
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{{route('inicio')}}">Inicio</a></li>
       <li class="breadcrumb-item active" aria-current="page">{!!$title!!}</li>
     </ol>
   </nav>
+  
       <div class="container">
             <!-- Post Content Column -->
             <div class="col-md-12 px-0 py-3">
               <!-- Title -->
-                <h1 class="p-2 bg-info text-white">CONSTRUIR & COMPRAR PARA RENTAR</h1>
+                <h1 class="p-2 bg-dark text-white">CONSTRUIR & COMPRAR PARA RENTAR</h1>
                 <!-- Author -->
                 <p class="lead">
                   Por <label>ND REAL ESTATE MASTER ADVISORS</label>

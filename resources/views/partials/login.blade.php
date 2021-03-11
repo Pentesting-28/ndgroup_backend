@@ -46,14 +46,14 @@
                     </div>
                     <div class="form-group row mb-0">
                         <div class="col-md-12 justify-content-center d-flex">
-                            <a href="{{route('password.request') }}" class="btn btn-outline-success">Olvidaste tu contraseña?</a>
-                            <button type="submit" class="btn btn-success  ml-3"> {{ __('Login') }}</button>
+                            <a href="{{route('password.request') }}" class="btn btn-outline-dark">Olvidaste tu contraseña?</a>
+                            <button type="submit" class="btn btn-dark  ml-3"> {{ __('Login') }}</button>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="border border-info btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="border border-info btn btn-dark" data-dismiss="modal">Cancel</button>
             </div>
         </div>
     </div>
