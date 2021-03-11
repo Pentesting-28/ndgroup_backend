@@ -68,7 +68,7 @@
 			<span class="row txt_inf" >DESARROLLO DESTACADO</span>
 			<span class="row txt_adora my-4" >ndgroup<br>Cancún</span>
 			<div class="row">
-				<a target="_blank" href="https://api.whatsapp.com/send?phone=5219982425617&text=Hola,%20información%20del%20inmueble." class="btn  btn-info" >M&aacute;s informaci&oacute;n</a>
+				<a target="_blank" href="https://api.whatsapp.com/send?phone=5219982425617&text=Hola,%20información%20del%20inmueble." class="btn  btn-dark" >M&aacute;s informaci&oacute;n</a>
 			</div>
 		</div>
 		<div class="col-md-3 col-12 txt_img_bt">

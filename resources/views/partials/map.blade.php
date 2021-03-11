@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="alert alert-info text-center mb-0 col-md-12" role="alert" >Ubicación de la propiedad <i class="fa fa-map"></i></h5>
+                <h5 class="alert alert-dark text-center mb-0 col-md-12" role="alert" >Ubicación de la propiedad <i class="fa fa-map"></i></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="border border-info btn btn-default" data-dismiss="modal">Aceptar</button>
+                <button type="button" class="border border-dark btn btn-default" data-dismiss="modal">Aceptar</button>
             </div>
         </div>
     </div>

@@ -114,7 +114,7 @@
 			<img src="{{asset( old('thumbnail', $data->images[0]['thumbnail']))}}" class="card-img-top preview" alt="{{old('properti', $data->properti)}}" >
 			<div class="position-relative p-0">
 				<input type="file" class="custom-file-input absolute-bottom" value="{{$data->images[0]['thumbnail']}}" name="thumbnail" id="thumbnail" >
-				<label class="btn btn-primary custom-file-label absolute-bottom border-0 rounded-0" for="thumbnail"></label>
+				<label class="btn btn-dark custom-file-label absolute-bottom border-0 rounded-0" for="thumbnail"></label>
 				{!! $errors->first('thumbnail','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
 			</div>
 		</div>
@@ -124,10 +124,10 @@
 			<img src="{{asset( $data->images[0]['main_img'])}}" class="card-img-top preview" alt="{{old('properti', $data->properti)}}" >
 			<div class="position-relative p-0">
 				<input type="file" class="custom-file-input absolute-bottom" value="{{$data->images[0]['main_img']}}" name="main_img" id="main_img" >
-				<label class="btn btn-primary custom-file-label absolute-bottom border-0 rounded-0" for="main_img"></label>
+				<label class="btn btn-dark custom-file-label absolute-bottom border-0 rounded-0" for="main_img"></label>
 				{!! $errors->first('main_img','<div class="alert alert-danger p-1 m-0 rounded-0" role="alert" >:message</div>') !!}
 			</div>
 		</div>
 	</div>
 </div>
-<input type="submit" class="btn btn-primary" value="{{ $btnText }}" name="enviar" />
+<input type="submit" class="btn btn-dark" value="{{ $btnText }}" name="enviar" />

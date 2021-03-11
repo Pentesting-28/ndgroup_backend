@@ -1,17 +1,15 @@
 @extends('layouts/template')
 @section('seccion')
-<nav aria-label="breadcrumb" >
+
+<section class="flex-column justify-content-center" >
+  <nav aria-label="breadcrumb" >
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="{{route('inicio')}}">Inicio</a></li>
     <li class="breadcrumb-item active" aria-current="page">{!!$title!!}</li>
   </ol>
 </nav>
-<section class="flex-column justify-content-center" >
-  <hr>
-  <div class="row">
-    <div class="col-md-12 ">
+<div class="container">
       <div class="items_list ">
-
         <div class="card mb-3 about" >
           <div class="row no-gutters"> 
             <div class="col-md-3 about_us">
@@ -27,9 +25,6 @@
             </div>
           </div>
         </div>
-
       </div>
-    </div>
-  </div>
 </section>
 @endsection('seccion')

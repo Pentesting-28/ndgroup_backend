@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="border border-info btn btn-default" data-dismiss="modal">Aceptar</button>
+                <button type="button" class="border border-info btn btn-dark" data-dismiss="modal">Aceptar</button>
             </div>
         </div>
     </div>
