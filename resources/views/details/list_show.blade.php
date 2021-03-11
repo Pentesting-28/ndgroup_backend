@@ -71,17 +71,18 @@
       }
 
       var locations = <?php echo json_encode($data);?>;
-      let locationsInfo = []
+      let propertyInfo = [];
      
        locations.data.forEach(location => {
             location.coordinates.forEach(coordinates => {
-                let locationData = {
+                let data = {
+                    title:location.properti,
                     position:{
                         lat:parseFloat(coordinates.latitude),
                         lng:parseFloat(coordinates.length)
                     }              
                 }
-                locationsInfo.push(locationData)
+                propertyInfo.push(data);
             })
         })
 
@@ -91,17 +92,17 @@
                   lat: Number(data.coords.latitude),
                   lng: Number(data.coords.longitude)
               }
-              dibujarMapa(currentPosition, locationsInfo)
+              dibujarMapa(currentPosition, propertyInfo)
           })
       }
 
-      const dibujarMapa = (obj, locationsInfo) => {
+      const dibujarMapa = (obj, propertyInfo) => {
           var map_icon_pin_icon = {
               url: bsm_pin_map,
               scaledSize: new google.maps.Size(30, 60)
           };
           let map = new google.maps.Map(document.getElementById('bsm_map_content'),{
-              zoom: 8,
+              zoom: 5,
               center: obj
           })
           
@@ -112,11 +113,11 @@
           })
 
           marker.setMap(map);
-          let markers = locationsInfo.map(place => {
+          let markers = propertyInfo.map(property => {
               return new google.maps.Marker({
-                  position: place.position,
+                  position: property.position,
                   map: map,
-                  title: "Tu ubicación",//locations.data[0].properti,
+                  title: property.title,//locations.data[0].properti,
                   icon: map_icon_pin_icon
               })
           })
