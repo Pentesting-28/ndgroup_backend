@@ -73,30 +73,29 @@
       var locations = <?php echo json_encode($data);?>;
       let propertyInfo = [];
      
-       locations.data.forEach(location => {
-            location.coordinates.forEach(coordinates => {
-                let data = {
-                    title:location.properti,
-                    position:{
-                        lat:parseFloat(coordinates.latitude),
-                        lng:parseFloat(coordinates.length)
-                    }              
-                }
-                propertyInfo.push(data);
-            })
-        })
-
-      if(navigator.geolocation){
-          navigator.geolocation.getCurrentPosition((data)=>{
-              let currentPosition = {
-                  lat: Number(data.coords.latitude),
-                  lng: Number(data.coords.longitude)
+      locations.data.forEach(location => {
+          location.coordinates.forEach(coordinates => {
+              let data = {
+                  title:location.properti,
+                  position:{
+                      lat:parseFloat(coordinates.latitude),
+                      lng:parseFloat(coordinates.length)
+                  }              
               }
-              dibujarMapa(currentPosition, propertyInfo)
+              propertyInfo.push(data);
+          })
+      })
+      if(navigator.geolocation){
+          navigator.geolocation.getCurrentPosition((data)=>{//Se debe cumplir la promesa
+              let currentPosition = {
+                  lat: Number(propertyInfo[0].position.lat),
+                  lng: Number(propertyInfo[0].position.lng)
+              }
+              dibujarMapa(currentPosition,propertyInfo);//currentPosition, 
           })
       }
 
-      const dibujarMapa = (obj, propertyInfo) => {
+      const dibujarMapa = (obj,propertyInfo) => {//obj,
           var map_icon_pin_icon = {
               url: bsm_pin_map,
               scaledSize: new google.maps.Size(30, 60)
@@ -105,22 +104,32 @@
               zoom: 5,
               center: obj
           })
-          
           let marker = new google.maps.Marker({// Mi ubicacion 
               position: obj,
-              title: "NDGROUP.MX", //'Ubicado en ' + locations.data[0].city,
+              title: propertyInfo[0].title, //'Ubicado en ' + locations.data[0].city,
               icon: map_icon_pin_icon
           })
 
           marker.setMap(map);
-          let markers = propertyInfo.map(property => {
-              return new google.maps.Marker({
-                  position: property.position,
-                  map: map,
-                  title: property.title,//locations.data[0].properti,
-                  icon: map_icon_pin_icon
-              })
-          })
+
+          let n = propertyInfo.length;
+
+          for(let k = 1; k < n; k++){
+            new google.maps.Marker({
+                position: propertyInfo[k].position,
+                map: map,
+                title: propertyInfo[k].title,//locations.data[0].properti,
+                icon: map_icon_pin_icon
+            });
+          }
+          // let markers = propertyInfo.map(property => {
+          //     return new google.maps.Marker({
+          //         position: property.position,
+          //         map: map,
+          //         title: property.title,//locations.data[0].properti,
+          //         icon: map_icon_pin_icon
+          //     })
+          // })
       }
   }
 </script>
