@@ -13,7 +13,7 @@
         <div class="card mb-3 about" >
           <div class="row no-gutters"> 
             <div class="col-md-3 about_us">
-              <img src="{{ asset('/img/logo.jpg')}}" class="img-thumbnail rounded-0" alt="{!!$title!!}">
+              <img src="{{ asset('/img/logo.jpg')}}" class="img-thumbnail rounded-0 border-0" alt="{!!$title!!}">
             </div>
             <div class="col-md-9">
               <div class="card-body">

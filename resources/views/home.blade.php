@@ -36,7 +36,7 @@
 		<span class="sr-only">Next</span>
 	</a>
 </div>
-<section class="col-xl-12 my-5" >
+<section class="col-xl-12 my-3" >
 	<div class="row justify-content-center" >
 		<div class="col-md-3"><span class="row justify-content-center item_t timer_l" ></span><span class="row justify-content-center txt_item" >LISTADOS ACTIVOS</span></div>
 		<div class="col-md-3"><span class="row justify-content-center item_t timer_v" ></span><span class="row justify-content-center txt_item" >MILLONES EN VENTAS</span></div>
@@ -89,21 +89,21 @@
 	<div class="row col-xl-10 justify-content-center">
 		<h2 class="p-3 txt_t">Testimonios de nuestros Clientes</h2>
 		<div class="row col-xl-12 justify-content-left">
-			<div class="media my-4 col-md-6">
+			<div class="media mb-4 col-md-6">
 				<div class="media-body">
 					<p class="text-justify mt-4" >Excelente servicio eficacia absoluta en 3 días rentaron mi casa! Disponibles a toda hora súper recomendables! Mil gracias</p>
 					<h5 class="row m-0 justify-content-center">Jonás Santiz</h5>
 					<h6 class="row justify-content-center">Cliente</h6>
 				</div>
 			</div>
-			<div class="media my-4 col-md-6">
+			<div class="media mb-4 col-md-6">
 				<div class="media-body">
 					<p class="text-justify mt-4">Muy recomendado! Atención personalizada al 100%. Muy amables con su atención y con mucha formalidad. Gracias a todos en NDGROUP Cancún, en especial a Veny.</p>
 					<h5 class="row m-0 justify-content-center">Fernando Jimenez</h5>
 					<h6 class="row justify-content-center">Cliente</h6>
 				</div>
 			</div>
-			<div class="media my-4 col-md-6">
+			<div class="media mb-4 col-md-6">
 				<div class="media-body">
 					<p class="text-justify mt-4">Equipo muy profesional de principio a fin. Siguiendo todos los pasos como se debe para una renta segura. Mencion especial a Veny por su gran profesionalidad.</p>
 					<h5 class="row m-0 justify-content-center">Francisco Aquino</h5>

@@ -78,7 +78,7 @@ class PropertyController extends Controller
                       ->has('payments')
                       ->has('images')
                       ->orderBy('id', 'DESC')
-                      ->paginate(8);
+                      ->paginate(12);
     	return view('details.list_show', compact('data') );
     } catch (Exception $e) {
       return [

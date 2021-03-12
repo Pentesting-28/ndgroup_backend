@@ -11,12 +11,11 @@
   </div>
   <!-- END MAP -->
   <hr>
-  <div class="row">
-    <div class="col-md-12 ">
+  <div class="container-fluid items">
       <div class="items_list ">
         @auth
           <nav class="col-md-12 p-4 ">
-            <a class="btn btn-success text-decoration-none ml-3 col-md-2" href="{{route('crear')}}" role="button"><i class="fa fa-building"></i> Agregar propiedad</a>
+            <a class="btn btn-dark text-decoration-none ml-3 col-md-2 add" href="{{route('crear')}}" role="button"><i class="fa fa-building"></i> Agregar propiedad</a>
           </nav>
         @endauth
         @forelse( $data as $item )
@@ -27,15 +26,15 @@
                 <img src="{{asset($images->thumbnail)}}" class="card-img-top card_height" alt="{{$item->properti}}" >
               @endforeach
               <div class="card-body">
-               <span class="btn btn-info mb-3 py-0"><i class="fa fa-check-circle"></i> {{$item->status}} </span>
-                <h5 class="card-title text-info">{{$item->properti}}</h5>
+               <span class="btn btn-dark mb-3 py-0"><i class="fa fa-check-circle"></i> {{$item->status}} </span>
+                <h5 class="card-title text-dark">{{$item->properti}}</h5>
                 <p class="card-text text-dark">{{$item->city}}</p>
                 @foreach($item->payments as $payments)
                 <p class="card-text text-dark">${{$payments->price}} {{$payments->coin}}</p>
                 @endforeach
                 <p class="card-text text-dark"><small class="text-muted text-capitalize"> {{$item->created_at -> diffForHumans() }}</small> </p>
               </div>
-              <div class="card-footer bg bg-info col-md-12 d-flex flex-column align-items-center m-0">
+              <div class="card-footer bg bg-dark col-md-12 d-flex flex-column align-items-center m-0">
                 <label class="text-white pointer">Ver detalles</label>
               </div>
             </div>
@@ -53,10 +52,9 @@
         
         @endforelse
       </div>
-    </div>
   </div>
   <nav class="col-md-8 p-4 ">
-    {{ $data ->links() }}
+    {{ $data->links("pagination::bootstrap-4") }}
   </nav>
 </section>
 
@@ -101,7 +99,7 @@
               scaledSize: new google.maps.Size(30, 60)
           };
           let map = new google.maps.Map(document.getElementById('bsm_map_content'),{
-              zoom: 5,
+              zoom:9,
               center: obj
           })
           let marker = new google.maps.Marker({// Mi ubicacion 
