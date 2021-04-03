@@ -74,25 +74,10 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ route('contact')}}">Vende tu Propiedad</a>
           </li>
-          @auth
-          <li class="nav-item">
-              <div class="btn-group">
-                <button type="button" class="btn btn-dark dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Opción
-                </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item mb-2" href="{{route('register')}}" role="button"><i class="fa fa-user"></i> Agregar usuario</a>
-                  <a class="dropdown-item" href="{{route('crear')}}" role="button"><i class="fa fa-building"></i> Agregar propiedad</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item logout" href="#">{{ auth()->user()->name }} | Cerrar Sesión</a>
-                </div>
-              </div>
-          </li>
-          @else
+         
           <li class="nav-item">
             <a class="nav-link" data-toggle="modal" data-target="#login" href="#">Iniciar Sesión / Registrarse </a>
           </li>
-         @endauth
         </ul>
         <!-- movile -->
         <nav class="p-0 movile" >
@@ -100,30 +85,10 @@
             <ul class="navbar-nav menu_top col-12 p-0 " >
               <li class="col-4 px-0 py-2 menu_m">
                 <a href="{{route('inicio')}}"><img src="{{ asset('/img/logo.jpg')}}" class="rounded-0" alt="Logo"  /></a>
-              </li>
-              @auth
-              <li class="col-5 justify-content-end d-flex login-register p-0 " >
-
-              <div class="btn-group">
-                <button type="button" class="btn btn-dark dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Opción
-                </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item mb-2" href="{{route('register')}}" role="button"><i class="fa fa-user"></i> Agregar usuario</a>
-                  <a class="dropdown-item" href="{{route('crear')}}" role="button"><i class="fa fa-building"></i> Agregar propiedad</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item logout" href="#">{{ auth()->user()->name }} | Cerrar Sesión</a>
-                </div>
-              </div>
-              </li>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
-              @else              
+              </li>            
               <li class="col-5 justify-content-end d-flex login-register p-0 " >
                 <a href="{{ route('login') }}">Iniciar Sesión / Registrarse</a>
               </li>
-              @endauth
               <li class="col-2 justify-content-end d-flex px-0" >
                 <button id="menu_f" class="navbar navbar-light bg-dark" type="button" >
                 <span class="fa fa-navicon"></span>
